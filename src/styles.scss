@@ -6,8 +6,8 @@
 /* Importing Datepicker SCSS file. */
 @import "~ngx-bootstrap/datepicker/bs-datepicker";
 
-$primary-color: #0024d0;
-$secondary-color: #6d00d2;
+$primary-color: #506dff;
+$secondary-color: #951dff;
 
 /**
 * Author : Elroy Kanye
@@ -62,6 +62,10 @@ a {
 }
 h1, h2, h3, h4, h5, h6 {
 	font-family: "Raleway", sans-serif;
+}
+
+.spacer {
+  flex: 1 1 auto;
 }
 
 .back-to-top {
@@ -1428,3 +1432,6 @@ section {
 	}
 }
 
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
