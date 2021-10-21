@@ -6,13 +6,12 @@
     <nav id="navbar" class="navbar order-last order-lg-0">
       <ul>
         <!-- TODO switch to routerLinks rather -->
-        <li><a class="active" href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="courses.html">Courses</a></li>
-        <li><a href="trainers.html">Trainers</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="pricing.html">Pricing</a></li>
+        <li><a class="active" routerLink="/">Home</a></li>
+        <li><a routerLink="/mentor-form">Mentor</a></li>
+        <li><a routerLink="/mentee-form">Mentee</a></li>
+        <li><a routerLink="/contact">Contact</a></li>
 
+        <!--
         <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
           <ul>
             <li><a href="#">Drop Down 1</a></li>
@@ -30,12 +29,16 @@
             <li><a href="#">Drop Down 4</a></li>
           </ul>
         </li>
-        <li><a href="contact.html">Contact</a></li>
+        -->
+
       </ul>
       <i class="bi mobile-nav-toggle bi-list"></i>
-    </nav><!-- .navbar -->
+    </nav>
+    <!-- .navbar -->
 
-    <a href="courses.html" class="get-started-btn">Get Started</a>
+    <span class="spacer"></span>
+
+    <a routerLink="/" class="get-started-btn">Get Started</a>
 
   </div>
 </header>

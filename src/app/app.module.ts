@@ -19,6 +19,7 @@ import { ContactFormComponent } from './components/contact/contact-form/contact-
 import { MmMainComponent } from './components/mentor-mentee/mm-main/mm-main.component';
 import { MmMentorFormComponent } from './components/mentor-mentee/mm-mentor-form/mm-mentor-form.component';
 import { MmMenteeFormComponent } from './components/mentor-mentee/mm-mentee-form/mm-mentee-form.component';
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -39,11 +40,12 @@ import { MmMenteeFormComponent } from './components/mentor-mentee/mm-mentee-form
     MmMentorFormComponent,
     MmMenteeFormComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatIconModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
