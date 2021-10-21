@@ -38,6 +38,7 @@
               "src/assets/vendor/aos/aos.css",
               "src/assets/vendor/bootstrap-icons/bootstrap-icons.css",
               "src/assets/vendor/boxicons/css/boxicons.min.css",
+              "src/assets/vendor/remixicon/remixicon.css",
               "src/assets/vendor/swiper/swiper-bundle.min.css"
             ],
             "scripts": [
@@ -54,8 +55,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "3mb",
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
