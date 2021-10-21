@@ -42,7 +42,7 @@
               "src/assets/vendor/swiper/swiper-bundle.min.css"
             ],
             "scripts": [
-              "src/assets/main.js",
+              "src/assets/js/main.js",
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
               "src/assets/vendor/aos/aos.js",
