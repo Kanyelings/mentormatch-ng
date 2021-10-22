@@ -3,7 +3,7 @@
 
     <h1 class="logo me-auto"><a href="index.html">Match</a></h1>
 
-    <nav id="navbar" class="navbar order-last order-lg-0">
+    <nav id="navbar" #navBar class="navbar order-last order-lg-0" (click)="addMobileNav(navBar, navIcon)">
       <ul>
         <!-- TODO switch to routerLinks rather -->
         <li><a class="active" routerLink="/">Home</a></li>
@@ -32,7 +32,7 @@
         -->
 
       </ul>
-      <i class="bi mobile-nav-toggle bi-list"></i>
+      <i #navIcon class="bi mobile-nav-toggle bi-list"></i>
     </nav>
     <!-- .navbar -->
 
