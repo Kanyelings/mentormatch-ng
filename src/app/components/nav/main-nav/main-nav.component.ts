@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {NavItem} from "../../../models/nav-item";
 
 @Component({
   selector: 'app-main-nav',
@@ -8,13 +9,21 @@ import { Component, OnInit } from '@angular/core';
 export class MainNavComponent implements OnInit {
 
   showMobileNav: boolean = false;
+  navItems: NavItem[] = [];
 
-  constructor() { }
+  constructor() {
+    this.navItems = [
+      {id: 0, name: 'Home', routerLink: '/', active: true},
+      {id: 1, name: 'Mentor', routerLink: '/mentor-form', active: true},
+      {id: 2, name: 'Mentee', routerLink: '/mentee-form', active: true},
+      {id: 3, name: 'Contact', routerLink: '/contact', active: true},
+    ]
+  }
 
   ngOnInit(): void {
   }
 
-  addMobileNav(navBar: HTMLElement, navIcon: HTMLElement) {
+  private addMobileNav(navBar: HTMLElement, navIcon: HTMLElement) {
     this.showMobileNav = !this.showMobileNav;
     if( this.showMobileNav) {
       navBar.classList.add("navbar-mobile");
@@ -24,5 +33,13 @@ export class MainNavComponent implements OnInit {
       navBar.classList.remove("navbar-mobile", "bi-x");
       navIcon.classList.add("bi-list");
     }
+  }
+
+  reassignActive(navItemId: number) {
+    this.navItems.forEach(
+      function (navItem: NavItem) {
+        navItem.active = navItem.id == navItemId;
+      }
+    )
   }
 }
