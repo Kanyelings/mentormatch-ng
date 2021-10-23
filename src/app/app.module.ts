@@ -20,6 +20,7 @@ import { MmMainComponent } from './components/mentor-mentee/mm-main/mm-main.comp
 import { MmMentorFormComponent } from './components/mentor-mentee/mm-mentor-form/mm-mentor-form.component';
 import { MmMenteeFormComponent } from './components/mentor-mentee/mm-mentee-form/mm-mentee-form.component';
 import {MatIconModule} from "@angular/material/icon";
+import { HeroNavComponent } from './components/nav/hero-nav/hero-nav.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import {MatIconModule} from "@angular/material/icon";
     ContactFormComponent,
     MmMainComponent,
     MmMentorFormComponent,
-    MmMenteeFormComponent
+    MmMenteeFormComponent,
+    HeroNavComponent
   ],
     imports: [
         BrowserModule,
