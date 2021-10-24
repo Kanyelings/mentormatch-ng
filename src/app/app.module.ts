@@ -17,8 +17,6 @@ import { ContactMainComponent } from './components/contact/contact-main/contact-
 import { ContactMapComponent } from './components/contact/contact-map/contact-map.component';
 import { ContactFormComponent } from './components/contact/contact-form/contact-form.component';
 import { MmMainComponent } from './components/mentor-mentee/mm-main/mm-main.component';
-import { MmMentorFormComponent } from './components/mentor-mentee/mm-mentor-form/mm-mentor-form.component';
-import { MmMenteeFormComponent } from './components/mentor-mentee/mm-mentee-form/mm-mentee-form.component';
 import {MatIconModule} from "@angular/material/icon";
 import { HeroNavComponent } from './components/nav/hero-nav/hero-nav.component';
 import {ReactiveFormsModule} from "@angular/forms";
@@ -40,8 +38,6 @@ import { MmFormComponent } from './components/mentor-mentee/mm-form/mm-form.comp
     ContactMapComponent,
     ContactFormComponent,
     MmMainComponent,
-    MmMentorFormComponent,
-    MmMenteeFormComponent,
     HeroNavComponent,
     MmFormComponent
   ],
