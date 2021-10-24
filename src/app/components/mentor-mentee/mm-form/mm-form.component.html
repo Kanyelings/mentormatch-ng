@@ -1,0 +1,119 @@
+<div class="container aos-init aos-animate" data-aos="fade-up">
+
+  <div class="row mt-5">
+    <div class="col-lg-4">
+      <div class="info">
+        <div class="address">
+          <i class="bi bi-geo-alt"></i>
+          <h4>Location:</h4>
+          <p>
+            Caps Street <br>
+            Bambili, North West<br>
+            Cameroon <br><br>
+            <strong>Phone:</strong> &nbsp; <a href="tel:+237672270627">+237 672 270 627 </a><br>
+            <strong>Email:</strong> &nbsp; <a href="mailto:elroykanye@gmail.com">elroykanye@gmail.com</a><br>
+          </p>
+        </div>
+
+        <!--
+        <div class="email">
+          <i class="bi bi-envelope"></i>
+          <h4>Email:</h4>
+          <p>
+            <a href="mailto:elroykanye@gmail.com">elroykanye@gmail.com</a>
+          </p>
+        </div>
+
+        <div class="phone">
+          <i class="bi bi-phone"></i>
+          <h4>Call:</h4>
+          <p>
+            <a href="tel:+237672270627">+237 672 270 627</a>
+          </p>
+        </div>
+        -->
+      </div>
+
+    </div>
+
+    <div class="col-lg-8 mt-5 mt-lg-0">
+
+      <form [formGroup]="mmForm" (ngSubmit)="onSubmit()" role="form" class="php-email-form">
+        <!-- name -->
+        <div class="row">
+          <div class="col-md-6 form-group">
+            <input formControlName="firstName" type="text" class="form-control" id="firstName" placeholder="First Name" required>
+            <small class="form-text text-danger"></small>
+          </div>
+          <div class="col-md-6 form-group mt-3 mt-md-0">
+            <input formControlName="lastName" type="text" class="form-control" id="lastName" placeholder="Last Name" required>
+            <small *ngIf="mmForm.controls.lastName.valid" class="form-text text-danger"></small>
+          </div>
+        </div>
+        <!-- email and number -->
+        <div class="row">
+          <div class="col-md-6 form-group">
+            <input formControlName="email" type="text" class="form-control" id="email" placeholder="Email" required="">
+            <small class="form-text text-danger">
+
+            </small>
+          </div>
+          <div class="col-md-6 form-group mt-3 mt-md-0">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text">https://wa.me/</div>
+              </div>
+              <input formControlName="waNumber" type="tel" name="waNumber" class="form-control" id="waNumber" placeholder="Whatsapp number" required="">
+            </div>
+          </div>
+        </div>
+
+        <!-- gender -->
+        <div class="row form-row">
+          <div class="form-group col-12">
+            <div class="form-check-inline">
+              <input formControlName="gender" class="form-check-input" type="radio" id="male-radio" name="gender" value="Male">
+              <label class="form-check-label" for="male-radio">Male</label>
+            </div>
+            <div class="form-check-inline">
+              <input formControlName="gender" class="form-check-input" type="radio" id="female-radio" name="gender" value="Female" [checked]="true">
+              <label class="form-check-label" for="female-radio">Female</label>
+            </div>
+            <div class="form-check-inline">
+              <input formControlName="gender" class="form-check-input" type="radio" id="other-radio" name="gender" value="Other">
+              <label class="form-check-label" for="other-radio">Other</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <!-- department -->
+          <div class="form-group col-md-6">
+            <label for="department">Department</label><br>
+            <select formControlName="department" id="department" name="department" required="">
+              <option *ngFor="let department of departments" value="{{department.value}}">{{department.name}}</option>
+            </select>
+          </div>
+
+          <!-- mentor or mentee -->
+          <div class="form-group col-md-6">
+            <label for="role">Role</label><br>
+            <select formControlName="role"  id="role" name="role" required="">
+              <option *ngFor="let r of roles" value="{{r.value}}" >{{r.name}}</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group mt-3">
+          <input type="text" class="form-control" id="subject" placeholder="Subject" required="">
+        </div>
+
+        <div class="text-center">
+          <button [disabled]="!mmForm.valid" class="btn btn-primary" type="submit">Apply</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+</div>

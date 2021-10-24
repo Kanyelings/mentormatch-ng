@@ -1,0 +1,28 @@
+.ng-touched[required] {
+  border-left: 5px solid #f9ff45;
+}
+
+.ng-valid[required],
+.ng-valid.required,
+.ng-valid[minlength],
+.ng-valid.minlength,
+.ng-valid[maxlength],
+.ng-valid.maxlength {
+  border-left: 5px solid #42a948;
+}
+
+.ng-valid:not(form) {
+  border-left: 5px solid #a94442;
+}
+
+.alert div {
+  background-color: #fed3d3;
+  color: #820000;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: .5rem;
+}
