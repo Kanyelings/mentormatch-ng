@@ -35,7 +35,7 @@ export class MmFormComponent implements OnInit {
       firstName: new FormControl('', Validators.required),
       lastName: new FormControl('',Validators.required),
       email: new FormControl('', [Validators.required, Validators.email]),
-      waNumber: new FormControl('', [Validators.required]),
+      waNumber: new FormControl('', [Validators.required, Validators.min(9), Validators.max(12)]),
       gender: new FormControl('', Validators.required),
       department: new FormControl('', Validators.required),
       role: new FormControl('', Validators.required)
