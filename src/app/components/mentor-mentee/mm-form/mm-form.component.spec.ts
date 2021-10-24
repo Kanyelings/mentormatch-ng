@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MmMenteeFormComponent } from './mm-mentee-form.component';
+import { MmFormComponent } from './mm-form.component';
 
-describe('MmMenteeFormComponent', () => {
-  let component: MmMenteeFormComponent;
-  let fixture: ComponentFixture<MmMenteeFormComponent>;
+describe('MmFormComponent', () => {
+  let component: MmFormComponent;
+  let fixture: ComponentFixture<MmFormComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MmMenteeFormComponent ]
+      declarations: [ MmFormComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MmMenteeFormComponent);
+    fixture = TestBed.createComponent(MmFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
