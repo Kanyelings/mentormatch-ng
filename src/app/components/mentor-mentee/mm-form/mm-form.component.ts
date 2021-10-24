@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Role} from "../../../models/entity/role";
 import {Department} from "../../../models/entity/department";
+import {SharedModule} from "../../../modules/shared/shared.module";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-mm-form',
@@ -11,6 +13,7 @@ export class MmFormComponent implements OnInit {
 
   roles: Role[];
   departments: Department[];
+  mmForm: FormGroup;
   constructor() {
     this.departments = [
       {name: "Computer", value: "COME"},
@@ -27,9 +30,22 @@ export class MmFormComponent implements OnInit {
       {name: "Mentor", value: "mentor"},
       {name: "Mentee", value: "mentee"},
     ];
+
+    this.mmForm = new FormGroup({
+      firstName: new FormControl('', Validators.required),
+      lastName: new FormControl('',Validators.required),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      waNumber: new FormControl('', [Validators.required]),
+      gender: new FormControl('', Validators.required),
+      department: new FormControl('', Validators.required),
+      role: new FormControl('', Validators.required)
+    });
   }
 
   ngOnInit(): void {
   }
 
+  onSubmit() {
+
+  }
 }
