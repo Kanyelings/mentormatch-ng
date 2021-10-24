@@ -90,7 +90,7 @@
           <!-- department -->
           <div class="form-group col-md-6">
             <label for="department">Department</label><br>
-            <select formControlName="department" id="department" name="department" required="">
+            <select formControlName="department" id="department" name="department"class="custom-select"  required="">
               <option *ngFor="let department of departments" value="{{department.value}}">{{department.name}}</option>
             </select>
           </div>
@@ -98,7 +98,7 @@
           <!-- mentor or mentee -->
           <div class="form-group col-md-6">
             <label for="role">Role</label><br>
-            <select formControlName="role"  id="role" name="role" required="">
+            <select formControlName="role"  id="role" name="role"class="custom-select"  required="">
               <option *ngFor="let r of roles" value="{{r.value}}" >{{r.name}}</option>
             </select>
           </div>
@@ -108,12 +108,11 @@
           <input type="text" class="form-control" id="subject" placeholder="Subject" required="">
         </div>
 
+        <!-- reactive submit button : disabled if form group is invalid -->
         <div class="text-center">
           <button [disabled]="!mmForm.valid" class="btn btn-primary" type="submit">Apply</button>
         </div>
       </form>
-
     </div>
   </div>
-
 </div>

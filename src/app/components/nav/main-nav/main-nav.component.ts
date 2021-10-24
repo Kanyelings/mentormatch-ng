@@ -14,7 +14,7 @@ export class MainNavComponent implements OnInit {
   constructor() {
     this.navItems = [
       {id: 0, name: 'Home', routerLink: '/', active: true},
-      {id: 2, name: 'Apply', routerLink: '/mm', active: true},
+      {id: 2, name: 'Apply', routerLink: '/apply', active: true},
       {id: 3, name: 'Contact', routerLink: '/contact', active: true},
     ]
   }
