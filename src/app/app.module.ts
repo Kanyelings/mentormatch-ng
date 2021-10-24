@@ -21,6 +21,8 @@ import { MmMentorFormComponent } from './components/mentor-mentee/mm-mentor-form
 import { MmMenteeFormComponent } from './components/mentor-mentee/mm-mentee-form/mm-mentee-form.component';
 import {MatIconModule} from "@angular/material/icon";
 import { HeroNavComponent } from './components/nav/hero-nav/hero-nav.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import { MmFormComponent } from './components/mentor-mentee/mm-form/mm-form.component';
 
 @NgModule({
   declarations: [
@@ -40,13 +42,15 @@ import { HeroNavComponent } from './components/nav/hero-nav/hero-nav.component';
     MmMainComponent,
     MmMentorFormComponent,
     MmMenteeFormComponent,
-    HeroNavComponent
+    HeroNavComponent,
+    MmFormComponent
   ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         BrowserAnimationsModule,
-        MatIconModule
+        MatIconModule,
+        ReactiveFormsModule
     ],
   providers: [],
   bootstrap: [AppComponent]
