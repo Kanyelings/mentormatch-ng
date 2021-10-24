@@ -108,12 +108,11 @@
           <input type="text" class="form-control" id="subject" placeholder="Subject" required="">
         </div>
 
+        <!-- reactive submit button : disabled if form group is invalid -->
         <div class="text-center">
           <button [disabled]="!mmForm.valid" class="btn btn-primary" type="submit">Apply</button>
         </div>
       </form>
-
     </div>
   </div>
-
 </div>

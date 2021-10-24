@@ -12,7 +12,7 @@ const routes: Routes = [
     path: 'contact', component: ContactMainComponent
   },
   {
-    path: 'mm', component: MmMainComponent
+    path: 'apply', component: MmMainComponent
   },
 ];
 
