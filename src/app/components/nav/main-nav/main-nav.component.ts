@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import {NavItem} from "../../../models/nav-item";
 
 @Component({
@@ -8,8 +8,14 @@ import {NavItem} from "../../../models/nav-item";
 })
 export class MainNavComponent implements OnInit {
 
-  showModal: boolean = false;
   navItems: NavItem[] = [];
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent) {
+    let modalNav = document.getElementById("mobileNav")
+    if (!(modalNav === null) && event.target == modalNav) {
+      modalNav.style.display = "none";
+    }
+  }
 
   constructor() {
     this.navItems = [
@@ -18,23 +24,17 @@ export class MainNavComponent implements OnInit {
       {id: 3, name: 'Contact', routerLink: '/contact', active: false},
     ]
 
-    window.onclick = function (event) {
-      let modalNav = document.getElementById("modalNav")
-      if (!(modalNav === null) && event.target == modalNav) {
-        modalNav.style.display = "none";
-      }
-    }
   }
 
   ngOnInit(): void {
   }
 
-  showModalNav(modalNav: HTMLDivElement, show: boolean) {
-    this.showModal = show;
-    if (this.showModal) {
-      modalNav.style.display = "block";
-    } else {
-      modalNav.style.display = "none";
+  toggleModal() {
+    let modal = document.querySelector(".modal");
+    if (modal != null) {
+      modal.classList.toggle("show-modal")
+      modal.classList.toggle("mm-show")
+      console.log("toggling nav")
     }
   }
 

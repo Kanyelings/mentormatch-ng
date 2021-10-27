@@ -4,33 +4,30 @@
     <h1 class="logo me-auto"><a href="index.html">Match</a></h1>
 
     <nav id="navbar" class="navbar order-last order-lg-0">
-      <ul #nav>
+      <ul>
         <!-- TODO switch to routerLinks rather -->
         <li class="{{navItem.active ? '' : ''}}" (click)="reassignActive(navItem.id)" *ngFor="let navItem of navItems">
           <a class="nav-item {{navItem.active ? 'active-nav' : ''}}" routerLink="{{ navItem.routerLink }}">{{navItem.name}}</a>
         </li>
       </ul>
 
-      <button class="btn" (click)="showModalNav(modalNav, true)">
-        <i class="bi mobile-nav-toggle bi-list"></i>
+      <button class="btn">
+        <i class="bi mobile-nav-toggle bi-list" (click)="toggleModal()"></i>
       </button>
 
     </nav>
 
-    <div id="mobileNav" class="modal" #modalNav>
+    <div id="mobileNav" class="modal">
       <div class="modal-content">
-        <span class="close" (click)="showModalNav(modalNav, false)">&times;</span>
-        Some modal stuff
+        <span class="close" (click)="toggleModal()">&times;</span>
+        <ul>
+          <!-- TODO switch to routerLinks rather -->
+          <li class="{{navItem.active ? '' : ''}}" (click)="reassignActive(navItem.id)" *ngFor="let navItem of navItems">
+            <a class="nav-item {{navItem.active ? 'active-nav' : ''}}" routerLink="{{ navItem.routerLink }}">{{navItem.name}}</a>
+          </li>
+        </ul>
       </div>
     </div>
-    <!--
-    <button class="navbar-toggler" type="button"
-              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle Navigation"
-              data-toggle="collapse" data-target="#navbarNav">
-
-      </button>
-      -->
-    <!-- .navbar -->
 
     <span class="spacer"></span>
 
