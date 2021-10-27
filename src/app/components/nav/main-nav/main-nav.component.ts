@@ -8,29 +8,33 @@ import {NavItem} from "../../../models/nav-item";
 })
 export class MainNavComponent implements OnInit {
 
-  showMobileNav: boolean = false;
+  showModal: boolean = false;
   navItems: NavItem[] = [];
 
   constructor() {
     this.navItems = [
       {id: 0, name: 'Home', routerLink: '/', active: true},
-      {id: 2, name: 'Apply', routerLink: '/apply', active: true},
-      {id: 3, name: 'Contact', routerLink: '/contact', active: true},
+      {id: 2, name: 'Apply', routerLink: '/apply', active: false},
+      {id: 3, name: 'Contact', routerLink: '/contact', active: false},
     ]
+
+    window.onclick = function (event) {
+      let modalNav = document.getElementById("modalNav")
+      if (!(modalNav === null) && event.target == modalNav) {
+        modalNav.style.display = "none";
+      }
+    }
   }
 
   ngOnInit(): void {
   }
 
-  private addMobileNav(navBar: HTMLElement, navIcon: HTMLElement) {
-    this.showMobileNav = !this.showMobileNav;
-    if( this.showMobileNav) {
-      navBar.classList.add("navbar-mobile");
-      navIcon.classList.remove("bi-list");
-      navIcon.classList.add("bi-x");
+  showModalNav(modalNav: HTMLDivElement, show: boolean) {
+    this.showModal = show;
+    if (this.showModal) {
+      modalNav.style.display = "block";
     } else {
-      navBar.classList.remove("navbar-mobile", "bi-x");
-      navIcon.classList.add("bi-list");
+      modalNav.style.display = "none";
     }
   }
 
