@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Role} from "../../../models/entity/role";
 import {Department} from "../../../models/entity/department";
-import {SharedModule} from "../../../modules/shared/shared.module";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
