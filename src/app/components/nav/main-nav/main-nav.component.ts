@@ -11,9 +11,10 @@ export class MainNavComponent implements OnInit {
   navItems: NavItem[] = [];
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: MouseEvent) {
-    let modalNav = document.getElementById("mobileNav")
-    if (!(modalNav === null) && event.target == modalNav) {
-      modalNav.style.display = "none";
+    this.toggleModal();
+    let mobileNav = document.getElementById("mobileNav")
+    if (!(mobileNav === null) && event.target == mobileNav) {
+      this.toggleModal();
     }
   }
 
@@ -34,6 +35,7 @@ export class MainNavComponent implements OnInit {
     if (modal != null) {
       modal.classList.toggle("show-modal")
       modal.classList.toggle("mm-show")
+      // TODO remove this log
       console.log("toggling nav")
     }
   }
