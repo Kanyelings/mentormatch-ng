@@ -3,7 +3,8 @@ import {Role} from "../../../models/entity/role";
 import {Department} from "../../../models/entity/department";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
-import {MENTOR_MATCH_API} from "../../../models/Constants";
+import {CMR_CODE, MENTOR_MATCH_API, WA_PREFIX} from "../../../models/Constants";
+import {MenteeRequest, MentorRequest} from "../../../models/json/requests";
 
 @Component({
   selector: 'app-mm-form',
@@ -13,7 +14,6 @@ import {MENTOR_MATCH_API} from "../../../models/Constants";
 export class MmFormComponent implements OnInit {
 
   data: Object | undefined;
-  private loading: boolean;
 
   roles: Role[];
   departments: Department[];
@@ -38,7 +38,7 @@ export class MmFormComponent implements OnInit {
       firstName: new FormControl('', Validators.required),
       lastName: new FormControl('',Validators.required),
       email: new FormControl('', [Validators.required, Validators.email]),
-      waNumber: new FormControl('', [Validators.required, Validators.min(9), Validators.max(15)]),
+      phoneNumber: new FormControl('', [Validators.required, Validators.minLength(9), Validators.maxLength(15)]),
       gender: new FormControl('', Validators.required),
       department: new FormControl('', Validators.required),
       role: new FormControl('', Validators.required)
@@ -50,14 +50,67 @@ export class MmFormComponent implements OnInit {
   }
 
   onSubmit() {
-    this.http.post(
+    let requestBody = this.prepareRequest(this.mmForm);
+    console.log("---------Request Body---------")
+    console.log(requestBody);
+    console.log("---------Request Body---------")
+
+    this.http.post<any>(
       MENTOR_MATCH_API,
-      JSON.stringify({
-        body: 'body here'
-      })
-    ).subscribe((res: Response) => {
-      this.data = res.json();
-      this.loading = false;
+      JSON.stringify(requestBody)
+    ).subscribe((response: Response) => {
+      this.data = response.json();
     });
+    console.log("---------Response Body---------")
+    console.log(this.data);
+    console.log("---------Response Body---------")
+  }
+
+  private prepareRequest(form: FormGroup): MentorRequest | MenteeRequest {
+    let role: string = form.get("role")?.value;
+    let menteeRequest: MenteeRequest;
+    let mentorRequest: MentorRequest;
+
+    let phoneNumber: string = form.get("phoneNumber")?.value;
+    let waNumber = this.fixWaNumber(phoneNumber);
+
+    mentorRequest = {
+      first_name: form.get("firstName")?.value,
+      second_name: form.get("lastName")?.value,
+      email: form.get("email")?.value,
+      gender: form.get("gender")?.value,
+      phone_number: phoneNumber,
+      wa_number: waNumber,
+      department: form.get("department")?.value,
+    }
+
+    if (role == "mentee") {
+      menteeRequest = {
+        ...mentorRequest,
+        previous_school: form.get("previousSchool")?.value
+      };
+      return menteeRequest;
+    }
+
+    return mentorRequest;
+  }
+
+  private fixPhoneNumber(phoneNumber: string): string {
+    if (phoneNumber.length == 9) {
+      return CMR_CODE.concat(phoneNumber);
+    } else if(
+      (phoneNumber.length == 12 && phoneNumber.substring(0, 3) === CMR_CODE.substring(1) ||
+      phoneNumber.length == 13 && phoneNumber.substring(0, 4) === CMR_CODE)) {
+      return phoneNumber;
+    } else {
+      return CMR_CODE.concat("672270627");
+    }
+  }
+
+  private fixWaNumber(phoneNumber: string): string {
+    if (phoneNumber.length < 12) {
+      phoneNumber = this.fixPhoneNumber(phoneNumber);
+    }
+    return WA_PREFIX.concat(phoneNumber);
   }
 }
