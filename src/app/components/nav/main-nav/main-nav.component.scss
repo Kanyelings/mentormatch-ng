@@ -1,0 +1,77 @@
+$primary-color: #506dff;
+$secondary-color: rgb(149, 29, 255);
+
+.navbar {
+  a:focus {
+    text-align: center;
+    border-radius: 32px;
+    padding: 4px 16px;
+    white-space: nowrap;
+  }
+}
+
+.nav-item {
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+.active-nav {
+  background: $primary-color;
+  color: #fff;
+  text-align: center;
+  border-radius: 32px;
+  padding: 4px 16px;
+  white-space: nowrap;
+  transition: 0.3s;
+  font-size: 16px;
+  display: inline-block;
+  align-content: center;
+  &:hover {
+    background: $secondary-color;
+    color: #fff;
+  }
+}
+
+.modal {
+  display:none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 1rem 1.5rem;
+  width: 24rem;
+  border-radius: 0.5rem;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 24px;
+  font-weight: bold;
+  width: 1.5rem;
+  line-height: 1.5rem;
+  text-align: center;
+  border-radius: 0.25rem;
+  background-color: lightgray;
+
+  :hover, :focus {
+    color: rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
