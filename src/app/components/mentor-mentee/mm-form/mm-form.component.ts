@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {Role} from "../../../models/entity/role";
 import {Department} from "../../../models/entity/department";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {HttpClient} from "@angular/common/http";
+import {MENTOR_MATCH_API} from "../../../models/Constants";
 
 @Component({
   selector: 'app-mm-form',
@@ -10,10 +12,13 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 })
 export class MmFormComponent implements OnInit {
 
+  data: Object | undefined;
+  private loading: boolean;
+
   roles: Role[];
   departments: Department[];
   mmForm: FormGroup;
-  constructor() {
+  constructor(private http: HttpClient) {
     this.departments = [
       {name: "Computer", value: "COME"},
       {name: "Electrical and Electronic", value: "EEEE"},
@@ -29,7 +34,6 @@ export class MmFormComponent implements OnInit {
       {name: "Mentor", value: "mentor"},
       {name: "Mentee", value: "mentee"},
     ];
-
     this.mmForm = new FormGroup({
       firstName: new FormControl('', Validators.required),
       lastName: new FormControl('',Validators.required),
@@ -42,9 +46,18 @@ export class MmFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
   }
 
   onSubmit() {
-
+    this.http.post(
+      MENTOR_MATCH_API,
+      JSON.stringify({
+        body: 'body here'
+      })
+    ).subscribe((res: Response) => {
+      this.data = res.json();
+      this.loading = false;
+    });
   }
 }

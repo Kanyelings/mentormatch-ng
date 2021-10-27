@@ -21,6 +21,7 @@ import {MatIconModule} from "@angular/material/icon";
 import { HeroNavComponent } from './components/nav/hero-nav/hero-nav.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import { MmFormComponent } from './components/mentor-mentee/mm-form/mm-form.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { MmFormComponent } from './components/mentor-mentee/mm-form/mm-form.comp
         AppRoutingModule,
         BrowserAnimationsModule,
         MatIconModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+      HttpClientModule
     ],
   providers: [],
   bootstrap: [AppComponent]
