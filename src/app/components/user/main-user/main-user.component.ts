@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {MmService} from "../../../services/mm.service";
 import {Mentee} from "../../../models/entity/mentee";
 import {Mentor} from "../../../models/entity/mentor";
+import {MENTEE, MENTOR} from "../../../models/constants/endpoints";
 
 @Component({
   selector: 'app-main-user',
@@ -9,6 +10,9 @@ import {Mentor} from "../../../models/entity/mentor";
   styleUrls: ['./main-user.component.scss']
 })
 export class MainUserComponent implements OnInit {
+
+  mentorVal: string = MENTOR;
+  menteeVal: string = MENTEE;
 
   mentees: Mentee[] = [];
   mentors: Mentor[] = [];
@@ -19,11 +23,13 @@ export class MainUserComponent implements OnInit {
   }
 
   loadMMs(): void {
-    this.mmService.getAllMs("mentor").subscribe(async (res: Response) => {
-      this.mentors = await res.json();
+    this.mmService.getAllMs("mentor").subscribe((data: Mentor[]) => {
+      console.log(data)
+      this.mentors = data;
     });
-    this.mmService.getAllMs("mentee").subscribe(async (res: Response) => {
-      this.mentees = await res.json();
+    this.mmService.getAllMs("mentee").subscribe((data: Mentee[]) => {
+      console.log(data)
+      this.mentees = data;
     });
   }
 
