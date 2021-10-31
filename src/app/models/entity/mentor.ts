@@ -8,4 +8,5 @@ export interface Mentor {
   department: string;
   level: string;
   image_path: string;
+  about: string;
 }
