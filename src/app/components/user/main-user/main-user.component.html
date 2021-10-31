@@ -14,9 +14,11 @@
   <div class="container-fluid aos-init aos-animate" data-aos="fade-up">
 
     <div class="row aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
+      Mentors
       <app-user-card *ngFor="let mentor of mentors" [user]="mentor" [role]="mentorVal"></app-user-card>
     </div>
     <div class="row aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
+      Mentees
       <app-user-card *ngFor="let mentee of mentees" [user]="mentee" [role]="menteeVal"></app-user-card>
     </div>
 
