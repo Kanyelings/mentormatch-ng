@@ -42,71 +42,75 @@
         <!-- name -->
         <div class="row">
           <div class="col-md-6 form-group">
-            <input formControlName="firstName" type="text" class="form-control" id="firstName" placeholder="First Name" required>
-            <small class="form-text text-danger"></small>
+            <mat-form-field appearance="outline">
+              <mat-label>First Name</mat-label>
+              <input matInput formControlName="firstName" type="text" placeholder="Elroy">
+            </mat-form-field>
           </div>
-          <div class="col-md-6 form-group mt-3 mt-md-0">
-            <input formControlName="lastName" type="text" class="form-control" id="lastName" placeholder="Last Name" required>
-            <small *ngIf="mmForm.controls.lastName.valid" class="form-text text-danger"></small>
+          <div class="col-md-6 form-group">
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Last Name</mat-label>
+              <input matInput formControlName="lastName" type="text" placeholder="Kanye">
+            </mat-form-field>
           </div>
         </div>
+
         <!-- email and number -->
         <div class="row">
           <div class="col-md-6 form-group">
-            <input formControlName="email" type="text" class="form-control" id="email" placeholder="Email" required>
-            <small class="form-text text-danger">
-
-            </small>
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Email</mat-label>
+              <input matInput formControlName="email" type="text" placeholder=elroykanye@gmail.com>
+            </mat-form-field>
           </div>
           <div class="col-md-6 form-group mt-3 mt-md-0">
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <div class="input-group-text">https://wa.me/</div>
-              </div>
-              <input formControlName="phoneNumber" type="text" class="form-control" id="waNumber" placeholder="Whatsapp number" required>
-            </div>
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Whatsapp Number</mat-label>
+              <input matInput formControlName="phoneNumber" type="text" placeholder=237672270627>
+            </mat-form-field>
           </div>
         </div>
 
         <!-- gender -->
         <div class="row form-row">
-          <div class="form-group col-12">
-            <div class="form-check-inline">
-              <input formControlName="gender" class="form-check-input" type="radio" id="male-radio" name="gender" value="Male">
-              <label class="form-check-label" for="male-radio">Male</label>
-            </div>
-            <div class="form-check-inline">
-              <input formControlName="gender" class="form-check-input" type="radio" id="female-radio" name="gender" value="Female" [checked]="true">
-              <label class="form-check-label" for="female-radio">Female</label>
-            </div>
-            <div class="form-check-inline">
-              <input formControlName="gender" class="form-check-input" type="radio" id="other-radio" name="gender" value="Other">
-              <label class="form-check-label" for="other-radio">Other</label>
-            </div>
+          <div class="form-group col-md-12">
+            <mat-radio-group aria-label="Gender" class="gender-radio-group">
+              <mat-label>Gender</mat-label>
+              <mat-radio-button class="gender-radio-button" *ngFor="let gender of genders" value="{{gender.toLowerCase()}}">{{gender}}</mat-radio-button>&nbsp;
+            </mat-radio-group>
           </div>
         </div>
 
         <div class="form-row">
           <!-- department -->
           <div class="form-group col-md-6">
-            <label for="department">Department</label><br>
-            <select formControlName="department" id="department" name="department"class="custom-select"  required="">
-              <option *ngFor="let department of departments" value="{{department.value}}">{{department.name}}</option>
-            </select>
+            <mat-form-field appearance="outline">
+              <mat-label>FormOption</mat-label>
+              <mat-select formControlName="department">
+                <mat-option *ngFor="let department of departments" value="{{department.value}}">{{department.name}}</mat-option>
+              </mat-select>
+            </mat-form-field>
           </div>
 
-          <!-- mentor or mentee -->
+          <!-- role -->
           <div class="form-group col-md-6">
-            <label for="role">Role</label><br>
-            <select formControlName="role"  id="role" name="role"class="custom-select"  required="">
-              <option *ngFor="let r of roles" value="{{r.value}}" >{{r.name}}</option>
-            </select>
+            <mat-form-field appearance="outline">
+              <mat-label>Role</mat-label>
+              <mat-select formControlName="department">
+                <mat-option *ngFor="let r of roles" value="{{r.value}}">{{r.name}}</mat-option>
+              </mat-select>
+            </mat-form-field>
           </div>
         </div>
+
 
         <div class="form-group mt-3">
-          <input type="text" class="form-control" id="subject" placeholder="Subject" required="">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Image</mat-label>
+            <input matInput formControlName="imagePath" type="text" placeholder="Image url">
+          </mat-form-field>
         </div>
+
 
         <!-- reactive submit button : disabled if form group is invalid -->
         <div class="text-center">
