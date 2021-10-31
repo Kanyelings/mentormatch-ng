@@ -11,6 +11,7 @@ import {WA_PREFIX} from "../../../models/constants/endpoints";
 export class UserCardComponent implements OnInit {
 
   @Input() user: Mentee | Mentor;
+  @Input() role: string;
 
   constructor() {
     this.user = {
@@ -26,13 +27,24 @@ export class UserCardComponent implements OnInit {
       wa_number: WA_PREFIX.concat("237672270627"),
       about: "I am crazy",
     }
+    this.role = "mentee";
+  }
+
+  ngOnInit(): void {
   }
 
   getUserName() : string {
     return this.user.first_name.concat(" ").concat(this.user.second_name);
   }
 
-  ngOnInit(): void {
+  getUserImage(): string {
+    if (this.user.image_path == null || this.user.image_path == '') {
+      if (this.user.gender == "M" || this.user.gender == "O") {
+        return  "src/assets/img/avatar/avatar-boy.png";
+      } else return "src/assets/img/avatar/avatar-girl.png";
+    } else {
+      return this.user.image_path;
+    }
   }
 
 }

@@ -70,12 +70,13 @@ export class MmFormComponent implements OnInit {
 
     let phoneNumber: string = form.get("phoneNumber")?.value;
     let waNumber = this.fixWaNumber(phoneNumber);
+    let gender = this.fixGender(form.get("gender")?.value);
 
     mentor = {
       first_name: form.get("firstName")?.value,
       second_name: form.get("lastName")?.value,
       email: form.get("email")?.value,
-      gender: form.get("gender")?.value,
+      gender: gender,
       phone_number: phoneNumber,
       wa_number: waNumber,
       department: form.get("department")?.value,
@@ -111,5 +112,9 @@ export class MmFormComponent implements OnInit {
       phoneNumber = this.fixPhoneNumber(phoneNumber);
     }
     return WA_PREFIX.concat(phoneNumber);
+  }
+
+  private fixGender(value: string): string {
+    return value.charAt(0).toUpperCase();
   }
 }
