@@ -40,8 +40,8 @@ export class UserCardComponent implements OnInit {
   getUserImage(): string {
     if (this.user.image_path == null || this.user.image_path == '') {
       if (this.user.gender == "M" || this.user.gender == "O") {
-        return  "src/assets/img/avatar/avatar-boy.png";
-      } else return "src/assets/img/avatar/avatar-girl.png";
+        return  "assets/img/avatar/avatar-boy.png";
+      } else return "assets/img/avatar/avatar-girl.png";
     } else {
       return this.user.image_path;
     }

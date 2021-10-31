@@ -11,12 +11,15 @@
     buttonLink="/">
   </app-hero-nav>
 
-  <div class="container aos-init aos-animate" data-aos="fade-up">
+  <div class="container-fluid aos-init aos-animate" data-aos="fade-up">
 
     <div class="row aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
       <app-user-card *ngFor="let mentor of mentors" [user]="mentor" [role]="mentorVal"></app-user-card>
+    </div>
+    <div class="row aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
       <app-user-card *ngFor="let mentee of mentees" [user]="mentee" [role]="menteeVal"></app-user-card>
     </div>
+
 
   </div>
 </section>
