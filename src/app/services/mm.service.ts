@@ -3,7 +3,14 @@ import { Injectable } from '@angular/core';
 import {Mentee} from "../models/entity/mentee";
 import {Mentor} from "../models/entity/mentor";
 import {Observable, throwError} from "rxjs";
-import {MENTEE_ENDPOINT_ADD, MENTOR_ENDPOINT_ADD, MENTOR_MATCH_API} from "../models/constants/constants";
+import {
+  MENTEE,
+  MENTEE_ENDPOINT_ADD, MENTEE_ENDPOINT_ALL,
+  MENTOR,
+  MENTOR_ENDPOINT_ADD,
+  MENTOR_ENDPOINT_ALL,
+  MENTOR_MATCH_API
+} from "../models/constants/endpoints";
 import {catchError, retry} from "rxjs/operators";
 
 @Injectable({
@@ -30,6 +37,22 @@ export class MmService {
     ).pipe(
       retry(1),
       catchError(this.processError)
+    );
+  }
+
+  public getAllMs(role: string): Observable<any> {
+    let endpoint: string = "";
+    if (role === MENTOR) {
+      endpoint = MENTOR_ENDPOINT_ALL;
+    } else if (role === MENTEE) {
+      endpoint = MENTEE_ENDPOINT_ALL;
+    } else {
+      endpoint = MENTOR_MATCH_API;
+    }
+
+    return this.http.get<any>(
+      endpoint,
+      this.httpHeader
     );
   }
 

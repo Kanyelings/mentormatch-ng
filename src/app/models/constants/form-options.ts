@@ -23,3 +23,13 @@ export const GENDERS: string[] = [
   "Female",
   "Other"
 ];
+
+export const LEVELS: string[] = getLevels(5);
+
+function getLevels(levelCount: number): string[] {
+  let levels: string[] = [];
+  for (let i: number = 2; i <= levelCount+1; i++) {
+    levels.push(i.toString().concat("00"));
+  }
+  return levels;
+}

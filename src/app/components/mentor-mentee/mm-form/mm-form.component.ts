@@ -6,13 +6,13 @@ import {HttpClient} from "@angular/common/http";
 import {
   CMR_CODE,
   WA_PREFIX
-} from "../../../models/constants/constants";
+} from "../../../models/constants/endpoints";
 import {MenteeService} from "../../../services/mentee.service";
 import {MentorService} from "../../../services/mentor.service";
 import {Mentor} from "../../../models/entity/mentor";
 import {Mentee} from "../../../models/entity/mentee";
 import {MmService} from "../../../services/mm.service";
-import {DEPARTMENTS, GENDERS, ROLES} from "../../../models/constants/form-options";
+import {DEPARTMENTS, GENDERS, LEVELS, ROLES} from "../../../models/constants/form-options";
 
 @Component({
   selector: 'app-mm-form',
@@ -24,6 +24,7 @@ export class MmFormComponent implements OnInit {
   data: Object | undefined;
   roles: FormOption[];
   genders: string[];
+  levels: string[];
   departments: FormOption[];
   mmForm: FormGroup;
 
@@ -31,6 +32,7 @@ export class MmFormComponent implements OnInit {
     this.departments = DEPARTMENTS;
     this.roles = ROLES;
     this.genders = GENDERS;
+    this.levels = LEVELS;
 
     this.mmForm = new FormGroup({
       firstName: new FormControl('', Validators.required),
@@ -41,7 +43,8 @@ export class MmFormComponent implements OnInit {
       department: new FormControl('', Validators.required),
       level: new FormControl('', Validators.required),
       role: new FormControl('', Validators.required),
-      imagePath: new FormControl('', Validators.required)
+      imagePath: new FormControl('', Validators.required),
+      about: new FormControl('', Validators.required),
     });
   }
 
@@ -67,17 +70,19 @@ export class MmFormComponent implements OnInit {
 
     let phoneNumber: string = form.get("phoneNumber")?.value;
     let waNumber = this.fixWaNumber(phoneNumber);
+    let gender = this.fixGender(form.get("gender")?.value);
 
     mentor = {
       first_name: form.get("firstName")?.value,
       second_name: form.get("lastName")?.value,
       email: form.get("email")?.value,
-      gender: form.get("gender")?.value,
+      gender: gender,
       phone_number: phoneNumber,
       wa_number: waNumber,
       department: form.get("department")?.value,
       level: form.get("level")?.value,
-      image_path: "" // TODO add img path
+      image_path: "", // TODO add img path
+      about: form.get("about")?.value
     }
 
     if (role == "mentee") {
@@ -107,5 +112,9 @@ export class MmFormComponent implements OnInit {
       phoneNumber = this.fixPhoneNumber(phoneNumber);
     }
     return WA_PREFIX.concat(phoneNumber);
+  }
+
+  private fixGender(value: string): string {
+    return value.charAt(0).toUpperCase();
   }
 }

@@ -26,6 +26,9 @@ import { MainUserComponent } from './components/user/main-user/main-user.compone
 import {MatSelectModule} from "@angular/material/select";
 import {MatInputModule} from "@angular/material/input";
 import {MatRadioModule} from "@angular/material/radio";
+import { UserCardComponent } from './components/user/user-card/user-card.component';
+import {MatCardModule} from "@angular/material/card";
+import {MatButtonModule} from "@angular/material/button";
 
 @NgModule({
   declarations: [
@@ -45,7 +48,8 @@ import {MatRadioModule} from "@angular/material/radio";
     MmMainComponent,
     HeroNavComponent,
     MmFormComponent,
-    MainUserComponent
+    MainUserComponent,
+    UserCardComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +60,9 @@ import {MatRadioModule} from "@angular/material/radio";
     HttpClientModule,
     MatSelectModule,
     MatInputModule,
-    MatRadioModule
+    MatRadioModule,
+    MatCardModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
