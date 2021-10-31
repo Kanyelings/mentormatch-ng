@@ -48,6 +48,10 @@ $secondary-color: rgb(149, 29, 255);
 	}
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
 	font-family: "Open Sans", sans-serif;
 	color: #444444;
@@ -62,6 +66,11 @@ a {
 }
 h1, h2, h3, h4, h5, h6 {
 	font-family: "Raleway", sans-serif;
+}
+
+.full-width {
+  width: 100%;
+  min-width: 100%;
 }
 
 .spacer {

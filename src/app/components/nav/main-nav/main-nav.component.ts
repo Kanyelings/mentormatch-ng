@@ -11,9 +11,9 @@ export class MainNavComponent implements OnInit {
   navItems: NavItem[] = [];
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: MouseEvent) {
-    let modalNav = document.getElementById("mobileNav")
-    if (!(modalNav === null) && event.target == modalNav) {
-      modalNav.style.display = "none";
+    let mobileNav = document.getElementById("mobileNav")
+    if (!(mobileNav === null) && event.target == mobileNav) {
+      this.toggleModal();
     }
   }
 
@@ -23,17 +23,16 @@ export class MainNavComponent implements OnInit {
       {id: 2, name: 'Apply', routerLink: '/apply', active: false},
       {id: 3, name: 'Contact', routerLink: '/contact', active: false},
     ]
-
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   toggleModal() {
     let modal = document.querySelector(".modal");
     if (modal != null) {
       modal.classList.toggle("show-modal")
       modal.classList.toggle("mm-show")
+      // TODO remove this log
       console.log("toggling nav")
     }
   }
