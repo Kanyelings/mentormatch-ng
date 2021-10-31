@@ -151,9 +151,9 @@
 ./src/app/app.component.html
 ./src/app/app.module.ts
 ./src/app/models
-./src/app/models/Constants.ts
+./src/app/models/constants.ts
 ./src/app/models/entity
-./src/app/models/entity/department.ts
+./src/app/models/entity/form-option.ts
 ./src/app/models/entity/role.ts
 ./src/app/models/nav-item.ts
 ./src/main.ts
