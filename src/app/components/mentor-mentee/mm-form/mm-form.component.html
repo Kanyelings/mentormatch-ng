@@ -71,17 +71,26 @@
           </div>
         </div>
 
-        <!-- gender -->
         <div class="row form-row">
-          <div class="form-group col-md-12">
-            <mat-radio-group aria-label="Gender" class="gender-radio-group">
+          <!-- gender -->
+          <div class="form-group col-md-6">
+            <mat-radio-group formControlName="gender" aria-label="Gender" class="gender-radio-group">
               <mat-label>Gender</mat-label>
               <mat-radio-button class="gender-radio-button" *ngFor="let gender of genders" value="{{gender.toLowerCase()}}">{{gender}}</mat-radio-button>&nbsp;
+            </mat-radio-group>
+          </div>
+          <!-- level -->
+          <div class="form-group col-md-6">
+            <mat-radio-group formControlName="level" aria-label="Level" class="gender-radio-group">
+              <mat-label>Level</mat-label>
+              <mat-radio-button class="gender-radio-button" *ngFor="let level of levels" value="{{level}}">{{level}}</mat-radio-button>&nbsp;
             </mat-radio-group>
           </div>
         </div>
 
         <div class="form-row">
+
+
           <!-- department -->
           <div class="form-group col-md-6">
             <mat-form-field appearance="outline">

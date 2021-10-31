@@ -12,7 +12,7 @@ import {MentorService} from "../../../services/mentor.service";
 import {Mentor} from "../../../models/entity/mentor";
 import {Mentee} from "../../../models/entity/mentee";
 import {MmService} from "../../../services/mm.service";
-import {DEPARTMENTS, GENDERS, ROLES} from "../../../models/constants/form-options";
+import {DEPARTMENTS, GENDERS, LEVELS, ROLES} from "../../../models/constants/form-options";
 
 @Component({
   selector: 'app-mm-form',
@@ -24,6 +24,7 @@ export class MmFormComponent implements OnInit {
   data: Object | undefined;
   roles: FormOption[];
   genders: string[];
+  levels: string[];
   departments: FormOption[];
   mmForm: FormGroup;
 
@@ -31,6 +32,7 @@ export class MmFormComponent implements OnInit {
     this.departments = DEPARTMENTS;
     this.roles = ROLES;
     this.genders = GENDERS;
+    this.levels = LEVELS;
 
     this.mmForm = new FormGroup({
       firstName: new FormControl('', Validators.required),
