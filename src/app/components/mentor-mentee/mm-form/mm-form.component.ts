@@ -1,10 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import {Role} from "../../../models/entity/role";
-import {Department} from "../../../models/entity/department";
+import {FormOption} from "../../../models/entity/form-option";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
-import {CMR_CODE, MENTOR_MATCH_API, WA_PREFIX} from "../../../models/Constants";
-import {MenteeRequest, MentorRequest} from "../../../models/json/requests";
+import {
+  CMR_CODE,
+  WA_PREFIX
+} from "../../../models/constants/constants";
+import {MenteeService} from "../../../services/mentee.service";
+import {MentorService} from "../../../services/mentor.service";
+import {Mentor} from "../../../models/entity/mentor";
+import {Mentee} from "../../../models/entity/mentee";
+import {MmService} from "../../../services/mm.service";
+import {DEPARTMENTS, GENDERS, ROLES} from "../../../models/constants/form-options";
 
 @Component({
   selector: 'app-mm-form',
@@ -14,26 +22,16 @@ import {MenteeRequest, MentorRequest} from "../../../models/json/requests";
 export class MmFormComponent implements OnInit {
 
   data: Object | undefined;
-
-  roles: Role[];
-  departments: Department[];
+  roles: FormOption[];
+  genders: string[];
+  departments: FormOption[];
   mmForm: FormGroup;
-  constructor(private http: HttpClient) {
-    this.departments = [
-      {name: "Computer", value: "COME"},
-      {name: "Electrical and Electronic", value: "EEEE"},
-      {name: "Mechanical and Industrial", value: "MECE"},
-      {name: "Civil and Architecture", value: "CVLE"},
-      {name: "Petroleum", value: "PETE"},
-      {name: "Mining and Mineral", value: "MINE"},
-      {name: "Chemical and Biomedical", value: "BMEE"},
-      {name: "Chemical and Biological", value: "CBE"},
-      {name: "Biotechnol", value: "BIOTECH"},
-    ];
-    this.roles = [
-      {name: "Mentor", value: "mentor"},
-      {name: "Mentee", value: "mentee"},
-    ];
+
+  constructor(private http: HttpClient, private menteeService: MenteeService, private mentorService: MentorService, private mmService: MmService) {
+    this.departments = DEPARTMENTS;
+    this.roles = ROLES;
+    this.genders = GENDERS;
+
     this.mmForm = new FormGroup({
       firstName: new FormControl('', Validators.required),
       lastName: new FormControl('',Validators.required),
@@ -41,40 +39,36 @@ export class MmFormComponent implements OnInit {
       phoneNumber: new FormControl('', [Validators.required, Validators.minLength(9), Validators.maxLength(15)]),
       gender: new FormControl('', Validators.required),
       department: new FormControl('', Validators.required),
-      role: new FormControl('', Validators.required)
+      level: new FormControl('', Validators.required),
+      role: new FormControl('', Validators.required),
+      imagePath: new FormControl('', Validators.required)
     });
   }
 
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void {}
 
   onSubmit() {
-    let requestBody = this.prepareRequest(this.mmForm);
-    console.log("---------Request Body---------")
-    console.log(requestBody);
-    console.log("---------Request Body---------")
+    let mmBody: Mentee | Mentor = this.prepareRequest(this.mmForm);
+    let role: string = this.mmForm.get("role")?.value;
 
-    this.http.post<any>(
-      MENTOR_MATCH_API,
-      JSON.stringify(requestBody)
-    ).subscribe((response: Response) => {
-      this.data = response.json();
+    this.mmService.addMm(mmBody, role).subscribe((response: Response) => {
+        this.data = response.json();
     });
-    console.log("---------Response Body---------")
+
+    console.log("---Response Body---")
     console.log(this.data);
-    console.log("---------Response Body---------")
+    console.log("---Response Body---")
   }
 
-  private prepareRequest(form: FormGroup): MentorRequest | MenteeRequest {
+  private prepareRequest(form: FormGroup): Mentor | Mentee {
     let role: string = form.get("role")?.value;
-    let menteeRequest: MenteeRequest;
-    let mentorRequest: MentorRequest;
+    let mentee: Mentee;
+    let mentor: Mentor;
 
     let phoneNumber: string = form.get("phoneNumber")?.value;
     let waNumber = this.fixWaNumber(phoneNumber);
 
-    mentorRequest = {
+    mentor = {
       first_name: form.get("firstName")?.value,
       second_name: form.get("lastName")?.value,
       email: form.get("email")?.value,
@@ -82,17 +76,18 @@ export class MmFormComponent implements OnInit {
       phone_number: phoneNumber,
       wa_number: waNumber,
       department: form.get("department")?.value,
+      level: form.get("level")?.value,
+      image_path: "" // TODO add img path
     }
 
     if (role == "mentee") {
-      menteeRequest = {
-        ...mentorRequest,
+      mentee = {
+        ...mentor,
         previous_school: form.get("previousSchool")?.value
       };
-      return menteeRequest;
+      return mentee;
     }
-
-    return mentorRequest;
+    return mentor;
   }
 
   private fixPhoneNumber(phoneNumber: string): string {
