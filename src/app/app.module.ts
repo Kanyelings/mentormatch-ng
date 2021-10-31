@@ -22,6 +22,10 @@ import { HeroNavComponent } from './components/nav/hero-nav/hero-nav.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import { MmFormComponent } from './components/mentor-mentee/mm-form/mm-form.component';
 import {HttpClientModule} from "@angular/common/http";
+import { MainUserComponent } from './components/user/main-user/main-user.component';
+import {MatSelectModule} from "@angular/material/select";
+import {MatInputModule} from "@angular/material/input";
+import {MatRadioModule} from "@angular/material/radio";
 
 @NgModule({
   declarations: [
@@ -40,16 +44,20 @@ import {HttpClientModule} from "@angular/common/http";
     ContactFormComponent,
     MmMainComponent,
     HeroNavComponent,
-    MmFormComponent
+    MmFormComponent,
+    MainUserComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        MatIconModule,
-        ReactiveFormsModule,
-      HttpClientModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatIconModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    MatSelectModule,
+    MatInputModule,
+    MatRadioModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
