@@ -1,1 +1,20 @@
-<p>user-card works!</p>
+<div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+  <div class="member">
+    <img src="{{user.image_path}}" class="img-fluid" alt="">
+    <div class="member-content">
+      <!-- name -->
+      <h4>{{getUserName()}}</h4>
+
+      <!-- department -->
+      <span>{{user.department}}</span>
+
+      <p>
+        {{user.about}}
+      </p>
+      <div class="social">
+        <a href="tel:{{user.phone_number}}"><i class="bi bi-phone"></i></a>
+        <a href="{{user.wa_number}}"><i class="bi bi-whatsapp"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
