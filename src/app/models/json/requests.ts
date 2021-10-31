@@ -6,6 +6,7 @@ export interface MentorRequest {
   phone_number: string;
   wa_number: string;
   department: string;
+  level: string;
 }
 
 export interface MenteeRequest extends MentorRequest {
