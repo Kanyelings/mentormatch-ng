@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Mentee} from "../models/entity/mentee";
 import {Observable} from "rxjs";
-import {MATCH_ENDPOINT, MENTEE_ENDPOINT} from "../models/constants/constants";
+import {MATCH_ENDPOINT, MENTEE_ENDPOINT, MENTEE_ENDPOINT_ALL} from "../models/constants/endpoints";
 import {catchError, retry} from "rxjs/operators";
 import {MmService} from "./mm.service";
 
@@ -34,7 +34,7 @@ export class MenteeService extends MmService {
   }
 
   public getAllMentees(): Observable<Mentee[]> {
-    return this.http.get<Mentee[]>(MENTEE_ENDPOINT)
+    return this.http.get<Mentee[]>(MENTEE_ENDPOINT_ALL)
       .pipe(
         retry(1),
         catchError(this.processError)
