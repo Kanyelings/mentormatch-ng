@@ -10,4 +10,5 @@ export interface User {
   phone_number: string;
   second_name: string;
   wa_number: string;
+  role: string;
 }
