@@ -6,7 +6,7 @@ import {HttpClient} from "@angular/common/http";
 import {
   CMR_CODE,
   WA_PREFIX
-} from "../../../models/constants/constants";
+} from "../../../models/constants/endpoints";
 import {MenteeService} from "../../../services/mentee.service";
 import {MentorService} from "../../../services/mentor.service";
 import {Mentor} from "../../../models/entity/mentor";
@@ -43,7 +43,8 @@ export class MmFormComponent implements OnInit {
       department: new FormControl('', Validators.required),
       level: new FormControl('', Validators.required),
       role: new FormControl('', Validators.required),
-      imagePath: new FormControl('', Validators.required)
+      imagePath: new FormControl('', Validators.required),
+      about: new FormControl('', Validators.required),
     });
   }
 
@@ -79,7 +80,8 @@ export class MmFormComponent implements OnInit {
       wa_number: waNumber,
       department: form.get("department")?.value,
       level: form.get("level")?.value,
-      image_path: "" // TODO add img path
+      image_path: "", // TODO add img path
+      about: form.get("about")?.value
     }
 
     if (role == "mentee") {
