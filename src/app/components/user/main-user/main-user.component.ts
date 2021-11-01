@@ -33,4 +33,12 @@ export class MainUserComponent implements OnInit {
     });
   }
 
+  displayMentors(): boolean {
+    return this.mentors.length > 0;
+  }
+
+  displayMentees(): boolean {
+    return this.mentees.length > 0;
+  }
+
 }
