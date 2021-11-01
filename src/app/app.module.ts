@@ -29,6 +29,7 @@ import {MatRadioModule} from "@angular/material/radio";
 import { UserCardComponent } from './components/user/user-card/user-card.component';
 import {MatCardModule} from "@angular/material/card";
 import {MatButtonModule} from "@angular/material/button";
+import {MatDividerModule} from "@angular/material/divider";
 
 @NgModule({
   declarations: [
@@ -51,19 +52,20 @@ import {MatButtonModule} from "@angular/material/button";
     MainUserComponent,
     UserCardComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatIconModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    MatSelectModule,
-    MatInputModule,
-    MatRadioModule,
-    MatCardModule,
-    MatButtonModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatIconModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        MatSelectModule,
+        MatInputModule,
+        MatRadioModule,
+        MatCardModule,
+        MatButtonModule,
+        MatDividerModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
