@@ -6,8 +6,8 @@
     <nav id="navbar" class="navbar order-last order-lg-0">
       <ul>
         <!-- TODO switch to routerLinks rather -->
-        <li class="{{navItem.active ? '' : ''}}" (click)="reassignActive(navItem.id)" *ngFor="let navItem of navItems">
-          <a class="nav-item {{navItem.active ? 'active-nav' : ''}}" routerLink="{{ navItem.routerLink }}">{{navItem.name}}</a>
+        <li class="m-1" (click)="reassignActive(navItem.id)" *ngFor="let navItem of navItems">
+          <a class="nav-item {{navItem.active ? 'active-nav' : ''}}" (click)="toggleModal()" routerLink="{{ navItem.routerLink }}">{{navItem.name}}</a>
         </li>
       </ul>
 
