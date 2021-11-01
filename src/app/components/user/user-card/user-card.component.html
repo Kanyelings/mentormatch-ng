@@ -1,42 +1,25 @@
-<mat-card>
-  <mat-card-header>
-    <mat-card-title>{{getUserName()}}</mat-card-title>
-    <mat-card-subtitle>{{role}}</mat-card-subtitle>
-  </mat-card-header>
-  <img mat-card-image class="img-fluid" src="assets/img/avatar/avatar-boy.png" alt="Photo of {{getUserName()}} on MentorMatch">
-
-  <mat-card-content>
-    <span>{{user.department}}</span>
-    <p>
-      {{user.about}}
-    </p>
-  </mat-card-content>
-  <mat-card-actions>
-    <a mat-icon-button href="tel:{{user.phone_number}}">
-      <mat-icon>phone</mat-icon>
-    </a>
-    <a mat-icon-button href="{{user.wa_number}}">
-      <mat-icon>whatsapp</mat-icon>
-    </a>
-  </mat-card-actions>
-</mat-card>
-<!--
-<div class="member">
-  <img src="{{user.image_path}}" class="img-fluid" alt="">
-  <div class="member-content">
-
-    <h4>{{getUserName()}}</h4>
-
-    <span>{{user.department}}</span>
-
-    <p>
-      {{user.about}}
-    </p>
-    <div class="social">
-      <a href="tel:{{user.phone_number}}"><i class="bi bi-phone"></i></a>
-      <a href="{{user.wa_number}}"><i class="bi bi-whatsapp"></i></a>
-    </div>
-  </div>
-
+<div class="m-2">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>{{getUserName()}}</mat-card-title>
+      <mat-card-subtitle>{{role}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image class="img-fluid" src="assets/img/avatar/avatar-boy.png" alt="Photo of {{getUserName()}} on MentorMatch">
+    <mat-divider></mat-divider>
+    <mat-card-content>
+      <span>{{user.department}}</span>
+      <p>
+        {{user.about}}
+      </p>
+    </mat-card-content>
+    <mat-divider></mat-divider>
+    <mat-card-actions>
+      <a mat-icon-button href="tel:{{user.phone_number}}">
+        <mat-icon>phone</mat-icon>
+      </a>
+      <a mat-icon-button href="{{user.wa_number}}">
+        <mat-icon>whatsapp</mat-icon>
+      </a>
+    </mat-card-actions>
+  </mat-card>
 </div>
--->
