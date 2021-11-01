@@ -1,11 +1,13 @@
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Mentee} from "../models/entity/mentee";
 import {Mentor} from "../models/entity/mentor";
 import {Observable, throwError} from "rxjs";
 import {
+  MATCH_ENDPOINT_ALL,
   MENTEE,
-  MENTEE_ENDPOINT_ADD, MENTEE_ENDPOINT_ALL,
+  MENTEE_ENDPOINT_ADD,
+  MENTEE_ENDPOINT_ALL,
   MENTOR,
   MENTOR_ENDPOINT_ADD,
   MENTOR_ENDPOINT_ALL,
@@ -52,6 +54,13 @@ export class MmService {
 
     return this.http.get<any>(
       endpoint,
+      this.httpHeader
+    );
+  }
+
+  public getAllMatches(): Observable<any> {
+    return this.http.get<any>(
+      MATCH_ENDPOINT_ALL,
       this.httpHeader
     );
   }
