@@ -1,5 +1,9 @@
 /**
- * @author Elroy Kanye
+ * @author Ndalle Joy
+ * Modified by: Elroy Kanye
+ *
+ * Container for the developers' information.
+ * Consists of helper interfaces and a repository with the hard coded information required.
  */
 export class Developer {
   private mentorImageDir = "assets/img/mentors/";
