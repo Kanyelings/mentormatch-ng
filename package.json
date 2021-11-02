@@ -20,6 +20,8 @@
     "@angular/platform-browser": "~12.2.0",
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
+    "@srexi/purecounter.js": "^1.1.0",
+    "@srexi/purecounterjs": "^1.2.1",
     "bootstrap": "^4.5.3",
     "ngx-bootstrap": "^7.1.0",
     "rxjs": "~6.6.0",
