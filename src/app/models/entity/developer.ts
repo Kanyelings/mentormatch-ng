@@ -74,7 +74,7 @@ export const DEVELOPERS = [
       "Joy Ngum",
       "ndallejoy.jpg",
       "Management",
-      "Kanyeling",
+      "Mentor",
       QUOTES[1],
       {
         facebook: "profile.php?id=100008694064842",
