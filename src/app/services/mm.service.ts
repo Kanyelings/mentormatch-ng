@@ -44,12 +44,15 @@ export class MmService {
 
   public getAllMs(role: string): Observable<any> {
     let endpoint: string = "";
-    if (role === MENTOR) {
-      endpoint = MENTOR_ENDPOINT_ALL;
-    } else if (role === MENTEE) {
-      endpoint = MENTEE_ENDPOINT_ALL;
-    } else {
-      endpoint = MENTOR_MATCH_API;
+    switch (role) {
+      case MENTOR:
+        endpoint = MENTOR_ENDPOINT_ALL;
+        break;
+      case MENTEE:
+        endpoint = MENTEE_ENDPOINT_ALL;
+        break;
+      default:
+        endpoint = MENTOR_MATCH_API;
     }
 
     return this.http.get<any>(
