@@ -3,7 +3,8 @@
 
     <div class="row aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
       <!-- Main Mentors -->
-      <div class="col-6 d-flex align-items-stretch" *ngFor="let mainMentor of mainMentors">
+      <!-- commented classes: align-items-stretch-->
+      <div class="col-6 d-flex" *ngFor="let mainMentor of mainMentors">
         <app-mentor-card [mentor]="mainMentor.info"></app-mentor-card>
       </div>
     </div>
