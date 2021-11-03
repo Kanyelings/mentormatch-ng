@@ -1,6 +1,11 @@
 /**
- * @author Elroy Kanye
+ * @author Ndalle Joy
+ * Modified by: Elroy Kanye
+ *
+ * Container for the developers' information.
+ * Consists of helper interfaces and a repository with the hard coded information required.
  */
+
 export class Developer {
   private mentorImageDir = "assets/img/mentors/";
   name: string = "";
@@ -125,10 +130,10 @@ export const DEVELOPERS = [
       "Kanyeling",
       QUOTES[4],
       {
-        facebook: "chelsea.banke",
-        twitter: "ChelseaBanke",
-        instagram: "7banke",
-        linkedin: "chelsea-banke-65218120a"
+        facebook: "",
+        twitter: "",
+        instagram: "",
+        linkedin: ""
       }
     ),
   },
@@ -141,10 +146,10 @@ export const DEVELOPERS = [
       "Kanyeling",
       QUOTES[5],
       {
-        facebook: "chelsea.banke",
-        twitter: "ChelseaBanke",
-        instagram: "7banke",
-        linkedin: "chelsea-banke-65218120a"
+        facebook: "fombi.favour",
+        twitter: "FavourFombi",
+        instagram: "fombifavour",
+        linkedin: "fombi-favour"
       }
     ),
   }
