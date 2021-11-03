@@ -28,7 +28,7 @@ export class Developer {
 
   private static getCompleteSocialLinks(initial: Handles): SocialLinks {
     let facebookDomain: string = "https://www.facebook.com/";
-    let twitterDomain: string = "https://www.instagram.com/";
+    let twitterDomain: string = "https://www.twitter.com/";
     let instaDomain: string = "https://www.instagram.com/";
     let linkedinDomain: string = "https://www.linkedin.com/in/";
     return {
