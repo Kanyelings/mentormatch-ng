@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Developer, DEVELOPERS} from "../../../models/entity/developer";
 
 @Component({
   selector: 'app-home-mentors',
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeMentorsComponent implements OnInit {
 
-  constructor() { }
+  mainMentors: {name: string; info: Developer}[];
+  kanyelingMentors: {name: string; info: Developer}[];
+
+  constructor() {
+    this.mainMentors = DEVELOPERS.slice(0,2);
+    this.kanyelingMentors = DEVELOPERS.slice(2);
+  }
 
   ngOnInit(): void {
   }

@@ -2,86 +2,19 @@
   <div class="container aos-init aos-animate" data-aos="fade-up">
 
     <div class="row aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
-
-      <!-- TODO add social media urls - Telmah -->
-      <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-        <div class="member">
-          <img src="assets/img/trainers/trainer-1.jpg" class="img-fluid" alt="">
-          <div class="member-content">
-            <h4>Tantoh Telmah</h4>
-            <span>JavaEE Dev,<br> Kanyeling</span>
-            <p>
-              Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut
-            </p>
-            <div class="social">
-              <a href="https://mobile.twitter.com/TelmahTantoh"><i class="bi bi-twitter"></i></a>
-              <a href="https://www.facebook.com/tantoh.telmah"><i class="bi bi-facebook"></i></a>
-              <a href="https://www.instagram.com/afrrican_telmah/"><i class="bi bi-instagram"></i></a>
-              <a href="https://www.linkedin.com/in//tantoh-telmah-058054202/"><i class="bi bi-linkedin"></i></a>
-            </div>
-          </div>
-        </div>
+      <!-- Main Mentors -->
+      <!-- commented classes: align-items-stretch-->
+      <div class="col-md-6 d-flex align-items-stretch" *ngFor="let mainMentor of mainMentors">
+        <app-mentor-card [mentor]="mainMentor.info"></app-mentor-card>
       </div>
-      <!-- TODO add social media urls - Chelsea -->
-      <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-        <div class="member">
-          <img src="assets/img/trainers/trainer-2.jpg" class="img-fluid" alt="">
-          <div class="member-content">
-            <h4>Chelsea Banke</h4>
-            <span>Web Dev (Backend),<br> Kanyeling</span>
-            <p>
-              Repellat fugiat adipisci nemo illum nesciunt voluptas repellendus. In architecto rerum rerum temporibus
-            </p>
-            <div class="social">
-              <a href="https://twitter.com/ChelseaBanke"><i class="bi bi-twitter"></i></a>
-              <a href="https://web.facebook.com/chelsea.banke"><i class="bi bi-facebook"></i></a>
-              <a href="https://www.instagram.com/7banke"><i class="bi bi-instagram"></i></a>
-              <a href="https://www.linkedin.com/in/chelsea-banke-65218120a/"><i class="bi bi-linkedin"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
+    </div>
 
-      <!-- TODO add social media urls - Emy -->
-      <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-        <div class="member">
-          <img src="assets/img/trainers/trainer-3.jpg" class="img-fluid" alt="">
-          <div class="member-content">
-            <h4>Njong Emy</h4>
-            <span>Dev (Fullstack), <br>Kanyeling</span>
-            <p>
-              Voluptas necessitatibus occaecati quia. Earum totam consequuntur qui porro et laborum toro des clara
-            </p>
-            <div class="social">
-              <a href=""><i class="bi bi-twitter"></i></a>
-              <a href=""><i class="bi bi-facebook"></i></a>
-              <a href=""><i class="bi bi-instagram"></i></a>
-              <a href=""><i class="bi bi-linkedin"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <!-- TODO add social media urls - Favour -->
-      <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-        <div class="member">
-          <img src="assets/img/trainers/trainer-3.jpg" class="img-fluid" alt="">
-          <div class="member-content">
-            <h4>Favour Fombi</h4>
-            <span>Web Dev (Frontend), <br> Kanyeling</span>
-            <p>
-              Voluptas necessitatibus occaecati quia. Earum totam consequuntur qui porro et laborum toro des clara
-            </p>
-            <div class="social">
-              <a href="https://twitter.com/FavourFombi"><i class="bi bi-twitter"></i></a>
-              <a href="https://www.facebook.com/fombi.favour"><i class="bi bi-facebook"></i></a>
-              <a href="https://www.instagram.com/fombifavour/"><i class="bi bi-instagram"></i></a>
-              <a href="https://www.linkedin.com/in/fombi-favour/"><i class="bi bi-linkedin"></i></a>
-            </div>
-          </div>
-        </div>
+    <div class="row aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
+      <!-- Kanyelings -->
+      <div class="col-lg-3 col-md-6 d-flex align-items-stretch" *ngFor="let kMentor of kanyelingMentors">
+        <app-mentor-card [mentor]="kMentor.info"></app-mentor-card>
       </div>
-
     </div>
 
   </div>

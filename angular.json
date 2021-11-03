@@ -48,8 +48,8 @@
               "node_modules/popper.js/dist/popper.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "node_modules/@srexi/purecounter.js/dist/purecounter.js",
               "src/assets/vendor/aos/aos.js",
-              "src/assets/vendor/purecounter/purecounter.js",
               "src/assets/vendor/swiper/swiper-bundle.min.js"
             ]
           },

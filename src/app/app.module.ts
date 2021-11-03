@@ -30,6 +30,7 @@ import { UserCardComponent } from './components/user/user-card/user-card.compone
 import {MatCardModule} from "@angular/material/card";
 import {MatButtonModule} from "@angular/material/button";
 import {MatDividerModule} from "@angular/material/divider";
+import { MentorCardComponent } from './components/user/mentor-card/mentor-card.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import {MatDividerModule} from "@angular/material/divider";
     HeroNavComponent,
     MmFormComponent,
     MainUserComponent,
-    UserCardComponent
+    UserCardComponent,
+    MentorCardComponent
   ],
     imports: [
         BrowserModule,
