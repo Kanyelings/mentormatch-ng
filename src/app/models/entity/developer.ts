@@ -72,7 +72,7 @@ export const DEVELOPERS = [
     name: "joy",
     info: new Developer(
       "Joy Ngum",
-      "ndallejoy.jpg",
+      "joy.jpg",
       "Management",
       "Mentor",
       QUOTES[1],
@@ -88,7 +88,7 @@ export const DEVELOPERS = [
     name: "telmah",
     info: new Developer(
       "Tantoh Telmah",
-      "tantohtelmah.jpg",
+      "telmah.jpg",
       "JavaEE",
       "Kanyeling",
       QUOTES[2],
@@ -104,7 +104,7 @@ export const DEVELOPERS = [
     name: "chelsea",
     info: new Developer(
       "Chelsea Banke",
-      "chelseabanke.jpg",
+      "chelsea.jpg",
       "Web (Backend)",
       "Kanyeling",
       QUOTES[3],
@@ -120,7 +120,7 @@ export const DEVELOPERS = [
     name: "emy",
     info: new Developer(
       "Njong Emy",
-      "njongemy.jpg",
+      "emy.jpg",
       "Web (Frontend)",
       "Kanyeling",
       QUOTES[4],
@@ -136,7 +136,7 @@ export const DEVELOPERS = [
     name: "favour",
     info: new Developer(
       "Favour Fombi",
-      "njongemy.jpg",
+      "favour.jpg",
       "Web (Frontend)",
       "Kanyeling",
       QUOTES[5],
