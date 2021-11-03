@@ -49,7 +49,7 @@ interface Handles {
 interface SocialLinks extends Handles{}
 
 const QUOTES: string[] = [
-  "I don't have much to say",
+  "I am 213 years old and I don't have much to say.",
   "I am a civil techie. I can build things with my hands.",
   "It is only when they go wrong that machines remind you how powerful they are.",
   "Coding is a privilege, but that privilege is not available to most Cameroonians.",
@@ -61,7 +61,7 @@ export const DEVELOPERS = [
     name: "elroykanye",
     info: new Developer(
       "Elroy Kanye",
-      "elroykanye.jpg",
+      "kanye.jpg",
       "Jack Developer",
       "The Kanye",
       QUOTES[0],
