@@ -130,10 +130,10 @@ export const DEVELOPERS = [
       "Kanyeling",
       QUOTES[4],
       {
-        facebook: "",
-        twitter: "",
-        instagram: "",
-        linkedin: ""
+        facebook: "njong.emy.3",
+        twitter: "Elabrava20",
+        instagram: "njongemy",
+        linkedin: "njong-emy-729764207"
       }
     ),
   },
