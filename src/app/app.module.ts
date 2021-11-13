@@ -31,6 +31,7 @@ import {MatCardModule} from "@angular/material/card";
 import {MatButtonModule} from "@angular/material/button";
 import {MatDividerModule} from "@angular/material/divider";
 import { MentorCardComponent } from './components/user/mentor-card/mentor-card.component';
+import {MatLineModule} from "@angular/material/core";
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { MentorCardComponent } from './components/user/mentor-card/mentor-card.c
         MatRadioModule,
         MatCardModule,
         MatButtonModule,
-        MatDividerModule
+        MatDividerModule,
+        MatLineModule
     ],
   providers: [],
   bootstrap: [AppComponent]
