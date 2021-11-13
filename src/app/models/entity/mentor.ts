@@ -1,4 +1,5 @@
 export interface Mentor {
+  username: string;
   first_name: string;
   second_name: string;
   email: string;
