@@ -21,7 +21,7 @@
       <div class="modal-content">
         <span class="close" (click)="toggleModal()">&times;</span>
         <ul>
-          <li class="{{navItem.active ? '' : ''}}" (click)="reassignActive(navItem.id)" *ngFor="let navItem of navItems">
+          <li class="{{navItem.active ? '' : ''}}" (click)="reassignActive(navItem.id); toggleModal()" *ngFor="let navItem of navItems">
             <a class="nav-item {{navItem.active ? 'active-nav' : ''}}" routerLink="{{ navItem.routerLink }}">{{navItem.name}}</a>
           </li>
         </ul>

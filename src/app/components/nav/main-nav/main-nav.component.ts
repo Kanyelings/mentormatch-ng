@@ -44,6 +44,5 @@ export class MainNavComponent implements OnInit {
         navItem.active = navItem.id == navItemId;
       }
     );
-    this.toggleModal();
   }
 }

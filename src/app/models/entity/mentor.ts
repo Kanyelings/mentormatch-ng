@@ -1,4 +1,5 @@
 export interface Mentor {
+  username: string;
   first_name: string;
   second_name: string;
   email: string;
@@ -7,6 +8,6 @@ export interface Mentor {
   wa_number: string;
   department: string;
   level: string;
-  image_path: string;
+  image: any;
   about: string;
 }

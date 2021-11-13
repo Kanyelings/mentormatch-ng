@@ -154,7 +154,3 @@ export const DEVELOPERS = [
     ),
   }
 ]
-
-
-
-
