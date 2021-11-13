@@ -8,7 +8,7 @@ export const MENTEE: string = "mentee";
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 // mentee endpoints
 export const MENTEE_ENDPOINT: string = MENTOR_MATCH_API.concat("/mentee");
-export const MENTEE_ENDPOINT_ADD: string = MENTEE_ENDPOINT.concat("/add");
+export const MENTEE_ENDPOINT_ADD: string = MENTEE_ENDPOINT;
 export const MENTEE_ENDPOINT_ALL: string = MENTEE_ENDPOINT.concat("/all");
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -16,7 +16,7 @@ export const MENTEE_ENDPOINT_ALL: string = MENTEE_ENDPOINT.concat("/all");
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 // mentor endpoints
 export const MENTOR_ENDPOINT: string = MENTOR_MATCH_API.concat("/mentor");
-export const MENTOR_ENDPOINT_ADD: string = MENTOR_ENDPOINT.concat("/add");
+export const MENTOR_ENDPOINT_ADD: string = MENTOR_ENDPOINT;
 export const MENTOR_ENDPOINT_ALL: string = MENTOR_ENDPOINT.concat("/all");
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
