@@ -35,10 +35,19 @@ export class MmFormComponent implements OnInit {
     this.levels = LEVELS;
 
     this.mmForm = new FormGroup({
+      username: new FormControl('', [
+        Validators.required,
+        Validators.minLength(10),
+        Validators.maxLength(10)]),
       firstName: new FormControl('', Validators.required),
       lastName: new FormControl('',Validators.required),
-      email: new FormControl('', [Validators.required, Validators.email]),
-      phoneNumber: new FormControl('', [Validators.required, Validators.minLength(9), Validators.maxLength(15)]),
+      email: new FormControl('', [
+        Validators.required,
+        Validators.email]),
+      phoneNumber: new FormControl('', [
+        Validators.required,
+        Validators.minLength(9),
+        Validators.maxLength(15)]),
       gender: new FormControl('', Validators.required),
       department: new FormControl('', Validators.required),
       level: new FormControl('', Validators.required),
