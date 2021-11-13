@@ -10,6 +10,7 @@
     </app-hero-nav>
 
     <div class="container-fluid aos-init aos-animate" data-aos="fade-up">
+
       <div class="m-1 {{displayMentors() ? 'd-block': 'd-none'}}">
         <span class="h3">Mentors</span>
         <div class="row aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
@@ -22,16 +23,11 @@
       <div class="m-1 {{displayMentees() ? 'd-block': 'd-none'}}">
         <span class="h3">Mentees</span>
         <div class="row aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
-
           <div class="col-lg-3 col-md-6" *ngFor="let mentor of mentors">
             <app-user-card *ngFor="let mentee of mentees" [user]="mentee" [role]="menteeVal"></app-user-card>
           </div>
         </div>
       </div>
-
-      Mentees
-
-
     </div>
   </section>
 </main>
