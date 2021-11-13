@@ -15,6 +15,7 @@ export class UserCardComponent implements OnInit {
 
   constructor() {
     this.user = {
+      username: "elroykanye",
       department: "COME",
       email: "elroykanye@gmail.com",
       first_name: "Elroy",
