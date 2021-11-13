@@ -39,6 +39,16 @@
     <div class="col-lg-8 mt-5 mt-lg-0">
 
       <form [formGroup]="mmForm" (ngSubmit)="onSubmit()" role="form" class="php-email-form">
+        <!-- username -->
+        <div class="row form-row">
+          <div class="col-md-6 form-group">
+            <mat-form-field appearance="outline">
+              <mat-label>Registration Number</mat-label>
+              <input matInput formControlName="username" type="text" placeholder="UBA2XE0000">
+            </mat-form-field>
+          </div>
+        </div>
+
         <!-- name -->
         <div class="row">
           <div class="col-md-6 form-group">
