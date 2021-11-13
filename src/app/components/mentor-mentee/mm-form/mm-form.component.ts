@@ -82,6 +82,7 @@ export class MmFormComponent implements OnInit {
     let gender = this.fixGender(form.get("gender")?.value);
 
     mentor = {
+      username: form.get("regNo")?.value,
       first_name: form.get("firstName")?.value,
       second_name: form.get("lastName")?.value,
       email: form.get("email")?.value,
