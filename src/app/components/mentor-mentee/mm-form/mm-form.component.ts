@@ -91,7 +91,7 @@ export class MmFormComponent implements OnInit {
       wa_number: waNumber,
       department: form.get("department")?.value,
       level: form.get("level")?.value,
-      image_path: "", // TODO add img path
+      image: "", // TODO add img path
       about: form.get("about")?.value
     }
 
