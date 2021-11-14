@@ -10,24 +10,25 @@
     </app-hero-nav>
 
     <div class="container-fluid aos-init aos-animate" data-aos="fade-up">
-
-      <div class="m-1 {{displayMentors() ? 'd-block': 'd-none'}}">
+      <div class="row aos-init aos-animate {{displayMatches() ? 'd-none': 'd-block'}}" data-aos="zoom-in" data-aos-delay="100">
+        <div class="col-lg-3 col-md-6">
+          It seems there is nothing here
+        </div>
+      </div>
+      <div class="m-1 {{displayMatches() ? 'd-block': 'd-none'}}">
         <span class="h3">Mentors</span>
-        <div class="row aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
-          <div class="col-lg-3 col-md-6" *ngFor="let mentor of mentors">
-            <app-user-card [user]="mentor" [role]="mentorVal"></app-user-card>
+        <div class="row aos-init aos-animate mb-3" data-aos="zoom-in" data-aos-delay="100" *ngFor="let match of matches">
+          <div class="col-12">
+            Mentor
+            <app-user-card [user]="match.mentor" [role]="mentorVal"></app-user-card>
+          </div>
+          <div class="col-lg-3 col-md-6" >
+            Mentees
+            <app-user-card *ngFor="let mentee of match.mentees" [user]="mentee" [role]="menteeVal"></app-user-card>
           </div>
         </div>
       </div>
 
-      <div class="m-1 {{displayMentees() ? 'd-block': 'd-none'}}">
-        <span class="h3">Mentees</span>
-        <div class="row aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
-          <div class="col-lg-3 col-md-6" *ngFor="let mentee of mentees">
-            <app-user-card [user]="mentee" [role]="menteeVal"></app-user-card>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 </main>
