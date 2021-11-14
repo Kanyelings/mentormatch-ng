@@ -1,1 +1,33 @@
-<p>matches works!</p>
+<main>
+  <section id="trainers" class="trainers">
+
+    <!-- hero -->
+    <app-hero-nav
+      title="Matches"
+      description="Find your match!"
+      buttonText="Home"
+      buttonLink="/">
+    </app-hero-nav>
+
+    <div class="container-fluid aos-init aos-animate" data-aos="fade-up">
+
+      <div class="m-1 {{displayMentors() ? 'd-block': 'd-none'}}">
+        <span class="h3">Mentors</span>
+        <div class="row aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
+          <div class="col-lg-3 col-md-6" *ngFor="let mentor of mentors">
+            <app-user-card [user]="mentor" [role]="mentorVal"></app-user-card>
+          </div>
+        </div>
+      </div>
+
+      <div class="m-1 {{displayMentees() ? 'd-block': 'd-none'}}">
+        <span class="h3">Mentees</span>
+        <div class="row aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
+          <div class="col-lg-3 col-md-6" *ngFor="let mentee of mentees">
+            <app-user-card [user]="mentee" [role]="menteeVal"></app-user-card>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
