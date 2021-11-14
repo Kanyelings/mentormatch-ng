@@ -6,6 +6,7 @@
 ./.editorconfig
 ./karma.conf.js
 ./tsconfig.spec.json
+./dirs.txt
 ./tsconfig.app.json
 ./stoopid.txt
 ./src
@@ -44357,6 +44358,7 @@
 ./.git/objects/46/a21a0def139b2f9332f80d557d3106d0d54233
 ./.git/objects/46/547a0be583aea2931041f6c630d88812ef5e9a
 ./.git/objects/46/17494b84392be80ff779cc2f77af63be1d42dd
+./.git/objects/46/3a4b092c68be6b36820b3806ad1d8775b911d3
 ./.git/objects/46/28b2685daed16e2419dba835bf7cdf84f81581
 ./.git/objects/46/fca359005bb0e3f317b85f74b0da9a1e547f44
 ./.git/objects/d8
@@ -44516,6 +44518,7 @@
 ./.git/objects/d3/d0fe966006d1c295d77d4782f69744a6eeb644
 ./.git/objects/d3/54d72ffdf6599d4804eaa5fd4e299039599f74
 ./.git/objects/d3/b855e97bee093d7cfc2f012d36a084089a73be
+./.git/objects/d3/e1b5581928f563f4a94a67453f0cb2595d9b3e
 ./.git/objects/57
 ./.git/objects/57/21fa702cc566bcde8f24401a00b7b14dfa7715
 ./.git/objects/57/c3a9a451d250833323ea3160439e218aac596b
@@ -44952,6 +44955,7 @@
 ./.git/objects/0c/99f269619bb6858f07ce907293e46c6fdbaa72
 ./.git/objects/0c/5b20ad1e9223614403d5220037360c3c94c9d8
 ./.git/objects/0c/4d040f1c73d38088186161d2a2e4ac568539b2
+./.git/objects/0c/d8f97aa27a2e83fc7e580c6ab8ce45af746ff2
 ./.git/objects/0c/f81da1e23151d0e84019e76ad0cd7d453febc9
 ./.git/objects/0c/6a63a3e607b4694b0b4395ba0a29986a1fda95
 ./.git/objects/0c/ff8d5a24544973524b885116114c2c1166b3ff
@@ -45616,6 +45620,7 @@
 ./.git/objects/7f
 ./.git/objects/7f/2e70a4fe2d2a94c70f059e0f35b1b7820db8a3
 ./.git/objects/7f/482719be1f3c74108cb4e5777f2a1094ec233d
+./.git/objects/7f/bfc52b8d39e035f5ed3e5ea274bfda21f48309
 ./.git/objects/7f/d2eb60f25cac2dac3e6f3f5506757bb59b7098
 ./.git/objects/7f/80d4b63bbbd6249370e88bf1594c44da1728dd
 ./.git/objects/7f/8b1d2b9fa9d948ab3305d39cce17e26d744c28
@@ -46183,6 +46188,7 @@
 ./.git/objects/43/00e0c38e25596e100a0bcf5204e2c04ccccc54
 ./.git/objects/43/24533ca5624568488263c07ed7f286b92ef227
 ./.git/objects/ed
+./.git/objects/ed/0a4900f506bad9fc8294a64ea6108fe4624eab
 ./.git/objects/ed/8d684ddd5ea440f6c969eb770144ec3ba6c14d
 ./.git/objects/ed/11f38d05bf88e7fbd2213343823029cbbce03a
 ./.git/objects/ed/61d430386c12d26227f94578a069298085c1b6
