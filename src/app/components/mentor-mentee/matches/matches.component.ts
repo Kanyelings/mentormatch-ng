@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {HttpClient} from "@angular/common/http";
+import {MmService} from "../../../services/mm.service";
+import {Match} from "../../../models/entity/match";
+import {MENTEE, MENTOR} from "../../../models/constants/endpoints";
 
 @Component({
   selector: 'app-matches',
@@ -7,7 +11,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MatchesComponent implements OnInit {
 
-  constructor() { }
+  mentorVal: string = MENTOR;
+  menteeVal: string = MENTEE;
+  data: Object[] = [];
+  matches: Match[] = [];
+
+  constructor(private http: HttpClient, private mmService: MmService) {}
 
   ngOnInit(): void {
   }
