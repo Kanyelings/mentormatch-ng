@@ -24,7 +24,7 @@ export const MENTOR_ENDPOINT_ALL: string = MENTOR_ENDPOINT;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 // match endpoints
 export const MATCH_ENDPOINT: string = MENTOR_MATCH_API.concat("/match");
-export const MATCH_ENDPOINT_ALL: string = MATCH_ENDPOINT.concat("/all")
+export const MATCH_ENDPOINT_ALL: string = MATCH_ENDPOINT;
 export const MATCH_SHUFFLE_ENDPOINT: string = MATCH_ENDPOINT.concat("/shuffle");
 export const MATCH_MENTOR_BY_MENTEE_ENDPOINT: string = MATCH_ENDPOINT.concat("/mentor")
 
