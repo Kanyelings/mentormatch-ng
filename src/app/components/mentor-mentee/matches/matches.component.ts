@@ -19,6 +19,17 @@ export class MatchesComponent implements OnInit {
   constructor(private http: HttpClient, private mmService: MmService) {}
 
   ngOnInit(): void {
+    this.loadMatches();
+  }
+
+  loadMatches(): void {
+    this.mmService.getAllMatches().subscribe((matchesRes: Match[])=> {
+      this.matches = matchesRes;
+    });
+  }
+
+  displayMatches(): boolean {
+    return this.matches.length > 0;
   }
 
 }
