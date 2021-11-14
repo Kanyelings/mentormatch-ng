@@ -52,7 +52,7 @@ export class MmFormComponent implements OnInit {
       department: new FormControl('', Validators.required),
       level: new FormControl('', Validators.required),
       role: new FormControl('', Validators.required),
-      imagePath: new FormControl('', Validators.required),
+      image: new FormControl('', Validators.required),
       about: new FormControl('', Validators.required),
     });
   }
