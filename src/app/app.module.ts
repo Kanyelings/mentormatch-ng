@@ -33,6 +33,8 @@ import {MatDividerModule} from "@angular/material/divider";
 import { MentorCardComponent } from './components/user/mentor-card/mentor-card.component';
 import {MatLineModule} from "@angular/material/core";
 import { MatchesComponent } from './components/mentor-mentee/matches/matches.component';
+import {MatListModule} from "@angular/material/list";
+import {MatTableModule} from "@angular/material/table";
 
 @NgModule({
   declarations: [
@@ -70,7 +72,9 @@ import { MatchesComponent } from './components/mentor-mentee/matches/matches.com
         MatCardModule,
         MatButtonModule,
         MatDividerModule,
-        MatLineModule
+        MatLineModule,
+        MatListModule,
+        MatTableModule
     ],
   providers: [],
   bootstrap: [AppComponent]
