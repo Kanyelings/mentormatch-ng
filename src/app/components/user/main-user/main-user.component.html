@@ -38,8 +38,8 @@
           </div>
         </div>
         <div class="row aos-init aos-animate {{displayMentors() ? 'd-block': 'd-none'}}" data-aos="zoom-in" data-aos-delay="100">
-          <div class="col-lg-3 col-md-6" *ngFor="let mentor of mentors">
-            <app-user-card [user]="mentor" [role]="mentorVal"></app-user-card>
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <app-user-card *ngFor="let mentor of mentors" [user]="mentor" [role]="mentorVal"></app-user-card>
           </div>
         </div>
       </div>
@@ -52,8 +52,10 @@
           </div>
         </div>
         <div class="row aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
-          <div class="col-lg-3 col-md-6" *ngFor="let mentee of mentees">
-            <app-user-card [user]="mentee" [role]="menteeVal"></app-user-card>
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="" *ngFor="let mentee of mentees">
+              <app-user-card [user]="mentee" [role]="menteeVal"></app-user-card>
+            </div>
           </div>
         </div>
       </div>
