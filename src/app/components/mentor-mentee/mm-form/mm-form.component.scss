@@ -1,3 +1,7 @@
+
+$primary-color: #506dff;
+$secondary-color: rgb(149, 29, 255);
+
 mat-form-field,
 mat-form-field input {
   width: 100%;
@@ -11,4 +15,9 @@ mat-form-field input {
 
 .gender-radio-button {
   margin: 5px;
+}
+
+
+.btn-primary.disabled, .btn-primary:disabled{
+  background-color: $secondary-color;
 }

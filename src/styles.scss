@@ -6,6 +6,8 @@
 /* Importing Datepicker SCSS file. */
 @import "~ngx-bootstrap/datepicker/bs-datepicker";
 
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap');
+
 $primary-color: #506dff;
 $secondary-color: rgb(149, 29, 255);
 
@@ -53,8 +55,8 @@ html {
 }
 
 body {
-	font-family: "Open Sans", sans-serif;
-	color: #444444;
+  font-family: 'Inconsolata', monospace;
+  color: #444444;
 }
 a {
 	color: $primary-color;
@@ -71,6 +73,11 @@ h1, h2, h3, h4, h5, h6 {
 .full-width {
   width: 100%;
   min-width: 100%;
+}
+
+.btn-primary{
+  background-color: $primary-color;
+
 }
 
 .spacer {
