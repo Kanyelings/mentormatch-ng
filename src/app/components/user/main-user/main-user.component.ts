@@ -3,6 +3,7 @@ import {MmService} from "../../../services/mm.service";
 import {Mentee} from "../../../models/entity/mentee";
 import {Mentor} from "../../../models/entity/mentor";
 import {MENTEE, MENTOR} from "../../../models/constants/endpoints";
+import {MatTableDataSource} from "@angular/material/table";
 
 @Component({
   selector: 'app-main-user',
@@ -16,6 +17,8 @@ export class MainUserComponent implements OnInit {
 
   mentees: Mentee[] = [];
   mentors: Mentor[] = [];
+  mentorsDatasource: MatTableDataSource<Mentor> = new MatTableDataSource();
+  menteesDatasource: MatTableDataSource<Mentee> = new MatTableDataSource();
   constructor(private mmService: MmService) { }
 
   ngOnInit(): void {
@@ -31,6 +34,8 @@ export class MainUserComponent implements OnInit {
       console.log(data)
       this.mentees = data;
     });
+    this.mentorsDatasource = new MatTableDataSource<Mentor>(this.mentors);
+    this.menteesDatasource = new MatTableDataSource<Mentee>(this.mentees)
   }
 
   displayMentors(): boolean {
@@ -41,4 +46,7 @@ export class MainUserComponent implements OnInit {
     return this.mentees.length > 0;
   }
 
+  getName(mentor: Mentor | Mentee) : String {
+    return mentor.first_name.concat(" ").concat(mentor.second_name);
+  }
 }

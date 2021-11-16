@@ -20,17 +20,18 @@
     <div id="mobileNav" class="modal">
       <div class="modal-content">
         <span class="close" (click)="toggleModal()">&times;</span>
-        <ul>
-          <li class="{{navItem.active ? '' : ''}}" (click)="reassignActive(navItem.id); toggleModal()" *ngFor="let navItem of navItems">
-            <a class="nav-item {{navItem.active ? 'active-nav' : ''}}" routerLink="{{ navItem.routerLink }}">{{navItem.name}}</a>
-          </li>
-        </ul>
+
+        <mat-nav-list>
+          <mat-list-item class="{{navItem.active ? '' : ''}}" (click)="reassignActive(navItem.id); toggleModal()" *ngFor="let navItem of navItems">
+            <a mat-button class="full-width nav-item {{navItem.active ? 'active-nav' : ''}}" routerLink="{{ navItem.routerLink }}">{{navItem.name}}</a>
+          </mat-list-item>
+        </mat-nav-list>
       </div>
     </div>
 
     <span class="spacer"></span>
 
-    <a routerLink="/" class="get-started-btn">Get Started</a>
+    <a routerLink="/apply" class="get-started-btn">Get Started</a>
 
   </div>
 </header>

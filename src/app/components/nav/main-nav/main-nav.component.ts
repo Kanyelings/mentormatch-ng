@@ -22,7 +22,8 @@ export class MainNavComponent implements OnInit {
       {id: 0, name: 'Home', routerLink: '/', active: true},
       {id: 1, name: 'Apply', routerLink: '/apply', active: false},
       {id: 2, name: 'Contact', routerLink: '/contact', active: false},
-      {id: 3, name: 'User', routerLink: '/users', active: false},
+      {id: 3, name: 'Users', routerLink: '/users', active: false},
+      {id: 4, name: 'Matches', routerLink: '/matches', active: false},
     ]
   }
 
