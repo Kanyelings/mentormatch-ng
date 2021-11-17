@@ -23,9 +23,11 @@ export class MatchesComponent implements OnInit {
   }
 
   loadMatches(): void {
-    this.mmService.getAllMatches().subscribe((matchesRes: Match[])=> {
-      this.matches = matchesRes;
+    this.mmService.getAllMatches().subscribe((matchesRes: Object[])=> {
+      console.log(matchesRes);
+      //this.matches = matchesRes;
     });
+
   }
 
   displayMatches(): boolean {
