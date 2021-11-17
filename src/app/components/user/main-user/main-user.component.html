@@ -11,54 +11,96 @@
 
     <div class="container-fluid my-5 mx-1 aos-init aos-animate" data-aos="fade-up">
 
-      <div class="m-1">
+      <!-- Mentors -->
+      <div class="d-block my-5">
         <span class="h3">Mentors</span>
-        <table mat-table [dataSource]="mentorsDatasource" class="mat-elevation-z8">
-          <ng-container matColumnDef="id">
-            <th mat-header-cell *matHeaderCellDef>ID</th>
-            <td mat-cell *matCellDef="let mentor">{{mentor.id}}</td>
-          </ng-container>
-          <ng-container matColumnDef="name">
-            <th mat-header-cell *matHeaderCellDef>Name</th>
-            <td mat-cell *matCellDef="let mentor">{{getName(mentor)}}</td>
-          </ng-container>
-          <ng-container matColumnDef="dept">
-            <th mat-header-cell *matHeaderCellDef>Department</th>
-            <td mat-cell *matCellDef="let mentor">{{mentor.department}}</td>
-          </ng-container>
-          <ng-container matColumnDef="level">
-            <th mat-header-cell *matHeaderCellDef>Level</th>
-            <td mat-cell *matCellDef="let mentor">{{mentor.level}}</td>
-          </ng-container>
-
-        </table>
-        <div class="row aos-init aos-animate {{displayMentors() ? 'd-none': 'd-block'}}" data-aos="zoom-in" data-aos-delay="100">
-          <div class="col-lg-3 col-md-6">
-            It seems there is nothing here
-          </div>
+        <div class="mx-5">
+          <mat-form-field appearance="outline">
+            <mat-label>Search</mat-label>
+            <input matInput (keyup)="applyFilter($event, 'mentor')" placeholder="Ex. Vince">
+          </mat-form-field>
         </div>
-        <div class="row aos-init aos-animate {{displayMentors() ? 'd-block': 'd-none'}}" data-aos="zoom-in" data-aos-delay="100">
-          <div class="col-lg-3 col-md-4 col-sm-6">
-            <app-user-card *ngFor="let mentor of mentors" [user]="mentor" [role]="mentorVal"></app-user-card>
-          </div>
+        <div class="mat-elevation-z8">
+          <table mat-table [dataSource]="mentors" matSort (matSortChange)="announceSortChange($event)" class="mat-elevation-z8">
+            <ng-container matColumnDef="id">
+              <th mat-header-cell mat-sort-header sortActionDescription="Sort by ID" *matHeaderCellDef>ID</th>
+              <td mat-cell *matCellDef="let element">{{element.username}}</td>
+            </ng-container>
+            <ng-container matColumnDef="name">
+              <th mat-header-cell mat-sort-header sortActionDescription="Sort by name" *matHeaderCellDef>Name</th>
+              <td mat-cell *matCellDef="let mentor">{{getName(mentor)}}</td>
+            </ng-container>
+            <ng-container matColumnDef="dept">
+              <th mat-header-cell mat-sort-header sortActionDescription="Sort by department" *matHeaderCellDef>Department</th>
+              <td mat-cell *matCellDef="let mentor">{{getDepartment(mentor)}}</td>
+            </ng-container>
+            <ng-container matColumnDef="level">
+              <th mat-header-cell mat-sort-header sortActionDescription="Sort by level" *matHeaderCellDef>Level</th>
+              <td mat-cell *matCellDef="let mentor">{{getLevel(mentor.level)}}</td>
+            </ng-container>
+            <!--
+            <ng-container matColumnDef="image">
+              <th mat-header-cell *matHeaderCellDef>Image</th>
+              <td mat-cell *matCellDef="let mentor">
+                <img src="{{getImage(mentor)}}" class="img-thumbnail" alt="Image of mentor {{getName(mentor)}}">
+              </td>
+            </ng-container>
+            -->
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+          </table>
         </div>
       </div>
 
-      <div class="m-1 {{displayMentees() ? 'd-block': 'd-none'}}">
+      <div>
+        <mat-divider></mat-divider>
+      </div>
+
+      <!-- Mentees -->
+      <div class="d-block my-5">
         <span class="h3">Mentees</span>
-        <div class="row aos-init aos-animate {{displayMentors() ? 'd-none': 'd-block'}}" data-aos="zoom-in" data-aos-delay="100">
-          <div class="col-lg-3 col-md-6">
-            It seems there is nothing here
-          </div>
+        <div class="mx-5">
+          <mat-form-field appearance="outline">
+            <mat-label>Search</mat-label>
+            <input matInput (keyup)="applyFilter($event, 'mentor')" placeholder="Ex. Vince">
+          </mat-form-field>
         </div>
-        <div class="row aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
-          <div class="col-lg-3 col-md-4 col-sm-6">
-            <div class="" *ngFor="let mentee of mentees">
-              <app-user-card [user]="mentee" [role]="menteeVal"></app-user-card>
-            </div>
-          </div>
+        <div class="mat-elevation-z8">
+          <table mat-table [dataSource]="mentees" matSort (matSortChange)="announceSortChange($event)" class="mat-elevation-z8">
+            <ng-container matColumnDef="id">
+              <th mat-header-cell mat-sort-header sortActionDescription="Sort by ID" *matHeaderCellDef>ID</th>
+              <td mat-cell *matCellDef="let element">{{element.username}}</td>
+            </ng-container>
+            <ng-container matColumnDef="name">
+              <th mat-header-cell mat-sort-header sortActionDescription="Sort by name" *matHeaderCellDef>Name</th>
+              <td mat-cell *matCellDef="let mentor">{{getName(mentor)}}</td>
+            </ng-container>
+            <ng-container matColumnDef="dept">
+              <th mat-header-cell mat-sort-header sortActionDescription="Sort by department" *matHeaderCellDef>Department</th>
+              <td mat-cell *matCellDef="let mentor">{{getDepartment(mentor)}}</td>
+            </ng-container>
+            <ng-container matColumnDef="level">
+              <th mat-header-cell mat-sort-header sortActionDescription="Sort by level" *matHeaderCellDef>Level</th>
+              <td mat-cell *matCellDef="let mentor">{{getLevel(mentor.level)}}</td>
+            </ng-container>
+            <!--
+            <ng-container matColumnDef="image">
+              <th mat-header-cell *matHeaderCellDef>Image</th>
+              <td mat-cell *matCellDef="let mentor">
+                <img src="{{getImage(mentor)}}" class="img-thumbnail" alt="Image of mentor {{getName(mentor)}}">
+              </td>
+            </ng-container>
+            -->
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+          </table>
         </div>
       </div>
+
     </div>
   </section>
 </main>
