@@ -35,6 +35,7 @@ import {MatLineModule} from "@angular/material/core";
 import { MatchesComponent } from './components/mentor-mentee/matches/matches.component';
 import {MatListModule} from "@angular/material/list";
 import {MatTableModule} from "@angular/material/table";
+import {MatSortModule} from "@angular/material/sort";
 
 @NgModule({
   declarations: [
@@ -74,7 +75,8 @@ import {MatTableModule} from "@angular/material/table";
         MatDividerModule,
         MatLineModule,
         MatListModule,
-        MatTableModule
+        MatTableModule,
+        MatSortModule
     ],
   providers: [],
   bootstrap: [AppComponent]
