@@ -23,9 +23,9 @@ export class MatchesComponent implements OnInit {
   }
 
   loadMatches(): void {
-    this.mmService.getAllMatches().subscribe((matchesRes: Object[])=> {
+    this.mmService.getAllMatches().subscribe((matchesRes: Match[])=> {
       console.log(matchesRes);
-      //this.matches = matchesRes;
+      this.matches = matchesRes;
     });
 
   }
