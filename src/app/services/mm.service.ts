@@ -77,7 +77,7 @@ export class MmService {
       default: endpoint = MENTOR_MATCH_API;
     }
     return this.http.get<any>(
-      endpoint,
+      endpoint.concat(`/${id}`),
       this.httpHeader
     ).pipe(
       retry(1),
