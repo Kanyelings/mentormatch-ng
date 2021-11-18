@@ -19,4 +19,23 @@ export class UserComponent implements OnInit {
     console.log(this.id);
   }
 
+  loadParams(): void {
+    let idParam = this.activatedRoute.snapshot.paramMap.get('id');
+    let roleParam: string | null = "";
+    this.activatedRoute.queryParams
+      .subscribe(params => {
+        roleParam = params.role;
+        console.log(this.role);
+      });
+
+    this.id = !(idParam == null) ? idParam : "-1";
+    this.role = !(roleParam == null) ? roleParam : "";
+  }
+
+  loadUser(id: string, role: string): void  {
+    this.mmService.getUser(id, role).subscribe((userRes: Mentee) => {
+      this.user = userRes;
+    });
+  }
+
 }
