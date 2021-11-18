@@ -36,6 +36,7 @@ import { MatchesComponent } from './components/mentor-mentee/matches/matches.com
 import {MatListModule} from "@angular/material/list";
 import {MatTableModule} from "@angular/material/table";
 import {MatSortModule} from "@angular/material/sort";
+import { UserComponent } from './components/user/user/user.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import {MatSortModule} from "@angular/material/sort";
     MainUserComponent,
     UserCardComponent,
     MentorCardComponent,
-    MatchesComponent
+    MatchesComponent,
+    UserComponent
   ],
     imports: [
         BrowserModule,
