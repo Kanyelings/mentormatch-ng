@@ -17,15 +17,16 @@
       </div>
       <div class="mx-1 my-5 {{displayMatches() ? 'd-block': 'd-none'}}">
         <span class="h3">Matches</span>
-        <div class="row aos-init aos-animate mb-3" data-aos="zoom-in" data-aos-delay="100">
-          <div>
-            <div *ngFor="let match of matches">
+        <div class="row aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
+          <div class="mb-3 " *ngFor="let match of matches">
+            <div class="mat-elevation-z5">
               <div class="col-12">
+                <span class="mat-h3">Mentor</span>
                 Mentor
                 <app-user-card [user]="match.mentor" [role]="mentorVal"></app-user-card>
               </div>
               <div class="col-lg-3 col-md-6" >
-                Mentees
+                <span class="mat-h4">Mentees</span>
                 <app-user-card *ngFor="let mentee of match.mentees" [user]="mentee" [role]="menteeVal"></app-user-card>
               </div>
             </div>
