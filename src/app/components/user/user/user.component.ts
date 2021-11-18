@@ -3,6 +3,7 @@ import {ActivatedRoute} from "@angular/router";
 import {MmService} from "../../../services/mm.service";
 import {Mentee} from "../../../models/entity/mentee";
 import {Mentor} from "../../../models/entity/mentor";
+import {DEFAULT_USER} from "../../../models/constants/user-defaults";
 
 @Component({
   selector: 'app-user',
@@ -13,9 +14,11 @@ export class UserComponent implements OnInit {
 
   id: string = "-1";
   role: string = "";
-  user: Mentor | Mentee | Object = {};
+  user: Mentor | Mentee;
 
-  constructor(private activatedRoute: ActivatedRoute, private mmService: MmService) {}
+  constructor(private activatedRoute: ActivatedRoute, private mmService: MmService) {
+    this.user = DEFAULT_USER;
+  }
 
   ngOnInit(): void {
     this.loadParams();
