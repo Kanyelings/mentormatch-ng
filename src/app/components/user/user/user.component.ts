@@ -28,11 +28,10 @@ export class UserComponent implements OnInit {
   loadParams(): void {
     let idParam = this.activatedRoute.snapshot.paramMap.get('id');
     let roleParam: string | null = "";
-    this.activatedRoute.queryParams
-      .subscribe(params => {
-        roleParam = params.role;
-        console.log(this.role);
-      });
+    this.activatedRoute.queryParams.subscribe(params => {
+      roleParam = params.role;
+      console.log(this.role);
+    });
 
     this.id = !(idParam == null) ? idParam : "-1";
     this.role = !(roleParam == null) ? roleParam : "";
