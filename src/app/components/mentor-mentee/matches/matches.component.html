@@ -18,8 +18,8 @@
       <div class="mx-1 my-5 {{displayMatches() ? 'd-block': 'd-none'}}">
         <span class="h3">Matches</span>
         <div class="row aos-init aos-animate mb-3" data-aos="zoom-in" data-aos-delay="100">
-          <mat-list>
-            <mat-list-item *ngFor="let match of matches">
+          <div>
+            <div *ngFor="let match of matches">
               <div class="col-12">
                 Mentor
                 <app-user-card [user]="match.mentor" [role]="mentorVal"></app-user-card>
@@ -28,9 +28,9 @@
                 Mentees
                 <app-user-card *ngFor="let mentee of match.mentees" [user]="mentee" [role]="menteeVal"></app-user-card>
               </div>
-            </mat-list-item>
+            </div>
             <mat-divider></mat-divider>
-          </mat-list>
+          </div>
 
 
         </div>
