@@ -17,7 +17,12 @@ export class HomeCountsComponent implements OnInit {
   counts: Counts;
 
   constructor(private mmService: MmService) {
-    this.counts = {mentors: "", mentees: "", total: "", matches: ""};
+    this.counts = {
+      mentors: 0,
+      mentees: 0,
+      total: 0,
+      matches: 0
+    };
   }
 
   ngOnInit(): void {
@@ -32,18 +37,18 @@ export class HomeCountsComponent implements OnInit {
     });
 
     this.counts = {
-      mentors: this.mentorCount.toString(),
-      mentees: this.menteeCount.toString(),
-      total: (this.mentorCount + this.menteeCount).toString(),
-      matches: this.matchCount.toString() // TODO update this to persist the front with valid data
+      mentors: this.mentorCount,
+      mentees: this.menteeCount,
+      total: this.mentorCount + this.menteeCount,
+      matches: this.matchCount
     }
   }
 
 }
 
 interface Counts {
-  mentors: string;
-  mentees: string;
-  total: string;
-  matches: string;
+  mentors: number;
+  mentees: number;
+  total: number;
+  matches: number;
 }
