@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
+import {MmService} from "../../../services/mm.service";
+import {Mentee} from "../../../models/entity/mentee";
+import {Mentor} from "../../../models/entity/mentor";
 
 @Component({
   selector: 'app-user',
@@ -8,15 +11,15 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class UserComponent implements OnInit {
 
-  id: string | null;
+  id: string = "-1";
+  role: string = "";
+  user: Mentor | Mentee | Object = {};
 
-  constructor(private activatedRoute: ActivatedRoute) {
-    this.id = "-1";
-  }
+  constructor(private activatedRoute: ActivatedRoute, private mmService: MmService) {}
 
   ngOnInit(): void {
-    this.id = this.activatedRoute.snapshot.paramMap.get('id');
-    console.log(this.id);
+    this.loadParams();
+    this.loadUser(this.id, this.role);
   }
 
   loadParams(): void {
