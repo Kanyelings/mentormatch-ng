@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {MmService} from "../../../services/mm.service";
 import {Mentor} from "../../../models/entity/mentor";
 import {Mentee} from "../../../models/entity/mentee";
+import {Match} from "../../../models/entity/match";
 
 @Component({
   selector: 'app-home-counts',
@@ -11,7 +12,6 @@ import {Mentee} from "../../../models/entity/mentee";
 export class HomeCountsComponent implements OnInit {
 
   mentorCount: number = 0;
-  menteeCount: number = 0;
   counts: Counts;
 
   constructor(private mmService: MmService) {
@@ -24,26 +24,30 @@ export class HomeCountsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.mmService.getAllMs("mentor")
-      .subscribe((mentors: Mentor[]) => {
-        this.mentorCount = mentors.length;
-      });
-    this.mmService.getAllMs("mentee")
-      .subscribe((mentees: Mentee[]) => {
-        this.menteeCount = mentees.length;
-      })
+    this.loadCounts();
+  }
 
-    this.counts = {
-      mentors: this.mentorCount,
-      mentees: this.menteeCount,
-      total: this.mentorCount + this.menteeCount,
-      matches: 0 // TODO update this to persist the front with valid data
-    }
+  loadCounts(): void {
+
+    this.mmService.getAllMs("mentor").subscribe((mentors: Mentor[]) => {
+      this.counts.mentors = mentors.length;
+    });
+    this.mmService.getAllMs("mentee").subscribe((mentees: Mentee[]) => {
+      this.counts.mentees = mentees.length;
+      this.counts.total = this.counts.mentees + this.counts.mentors;
+    });
+    this.mmService.getAllMatches().subscribe((matches: Match[]) => {
+      this.counts.matches = matches.length;
+      console.log(this.counts)
+    });
+
+    this.counts.total = this.counts.mentees + this.counts.mentors;
+
   }
 
 }
 
-interface Counts {
+export interface Counts {
   mentors: number;
   mentees: number;
   total: number;

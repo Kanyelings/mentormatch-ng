@@ -5,6 +5,7 @@ import {ContactMainComponent} from "./components/contact/contact-main/contact-ma
 import {MmMainComponent} from "./components/mentor-mentee/mm-main/mm-main.component";
 import {MainUserComponent} from "./components/user/main-user/main-user.component";
 import {MatchesComponent} from "./components/mentor-mentee/matches/matches.component";
+import {UserComponent} from "./components/user/user/user.component";
 
 const routes: Routes = [
   {
@@ -12,6 +13,9 @@ const routes: Routes = [
   },
   {
     path: 'users', component: MainUserComponent
+  },
+  {
+    path: 'user/:id', component: UserComponent
   },
   {
     path: 'contact', component: ContactMainComponent

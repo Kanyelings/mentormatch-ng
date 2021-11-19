@@ -35,6 +35,9 @@ import {MatLineModule} from "@angular/material/core";
 import { MatchesComponent } from './components/mentor-mentee/matches/matches.component';
 import {MatListModule} from "@angular/material/list";
 import {MatTableModule} from "@angular/material/table";
+import {MatSortModule} from "@angular/material/sort";
+import { UserComponent } from './components/user/user/user.component';
+import {CountUpModule} from "ngx-countup";
 
 @NgModule({
   declarations: [
@@ -57,24 +60,27 @@ import {MatTableModule} from "@angular/material/table";
     MainUserComponent,
     UserCardComponent,
     MentorCardComponent,
-    MatchesComponent
+    MatchesComponent,
+    UserComponent
   ],
     imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        MatIconModule,
-        ReactiveFormsModule,
-        HttpClientModule,
-        MatSelectModule,
-        MatInputModule,
-        MatRadioModule,
-        MatCardModule,
-        MatButtonModule,
-        MatDividerModule,
-        MatLineModule,
-        MatListModule,
-        MatTableModule
+      BrowserModule,
+      AppRoutingModule,
+      BrowserAnimationsModule,
+      MatIconModule,
+      ReactiveFormsModule,
+      HttpClientModule,
+      MatSelectModule,
+      MatInputModule,
+      MatRadioModule,
+      MatCardModule,
+      MatButtonModule,
+      MatDividerModule,
+      MatLineModule,
+      MatListModule,
+      MatTableModule,
+      MatSortModule,
+      CountUpModule
     ],
   providers: [],
   bootstrap: [AppComponent]

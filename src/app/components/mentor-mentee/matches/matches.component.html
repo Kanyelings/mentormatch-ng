@@ -10,21 +10,31 @@
     </app-hero-nav>
 
     <div class="container-fluid aos-init aos-animate" data-aos="fade-up">
-      <div class="row aos-init aos-animate {{displayMatches() ? 'd-none': 'd-block'}}" data-aos="zoom-in" data-aos-delay="100">
+      <div class="row aos-init aos-animate mx-1 my-5  {{displayMatches() ? 'd-none': 'd-block'}}" data-aos="zoom-in" data-aos-delay="100">
         <div class="col-lg-3 col-md-6">
           It seems there is nothing here
         </div>
       </div>
-      <div class="m-1 {{displayMatches() ? 'd-block': 'd-none'}}">
-        <span class="h3">Mentors</span>
-        <div class="row aos-init aos-animate mb-3" data-aos="zoom-in" data-aos-delay="100" *ngFor="let match of matches">
-          <div class="col-12">
-            Mentor
-            <app-user-card [user]="match.mentor" [role]="mentorVal"></app-user-card>
-          </div>
-          <div class="col-lg-3 col-md-6" >
-            Mentees
-            <app-user-card *ngFor="let mentee of match.mentees" [user]="mentee" [role]="menteeVal"></app-user-card>
+
+      <div class="mx-1 my-5 {{displayMatches() ? 'd-block': 'd-none'}}">
+        <span class="h3">Matches</span>
+        <div class="aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
+          <div class="mb-3 mat-elevation-z5" *ngFor="let match of matches">
+            <div class="row mx-1 no-gutters">
+              <div class="col-lg-3 col-md-4 col-sm-6">
+                <span class="mat-h2">Mentor</span>
+                <app-user-card [user]="match.mentor" [role]="mentorVal"></app-user-card>
+              </div>
+              <div class="col-lg-9 col-md-8 mat-elevation-z2 p-3">
+                <span class="mat-h2">Mentees</span>
+                <div class="row no-gutters">
+                  <div class="col-lg-4 col-md-6 col-sm-6" *ngFor="let mentee of match.mentees">
+                    <app-user-card  [user]="mentee" [role]="menteeVal"></app-user-card>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <mat-divider></mat-divider>
           </div>
         </div>
       </div>
